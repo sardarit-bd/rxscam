@@ -3,10 +3,10 @@ import React from 'react';
 export default function HeroSection() {
   return (
     <section className="relative w-full bg-gradient-to-b from-gray-50 to-white py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto text-center">
+      <div className="max-w-5xl xl:max-w-6xl mx-auto text-center">
         {/* Badge */}
         <div className="flex justify-center mb-8 sm:mb-10">
-          <div className="inline-flex items-center space-x-2 bg-[#2B4FBF] text-white px-5 py-2.5 rounded-full shadow-lg">
+          <div className="inline-flex items-center space-x-2 bg-[#2B4FBF] text-white px-5 py-3 rounded-md shadow-lg">
             <svg 
               className="w-5 h-5" 
               fill="currentColor" 
@@ -21,8 +21,8 @@ export default function HeroSection() {
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight">
-          <span className="text-[#DC2626]">Stop Scammers</span>{' '}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 leading-tight">
+          <span className="bg-[linear-gradient(90deg,#DC2626_0%,#550101_100%)] bg-clip-text text-transparent">Stop Scammers</span>{' '}
           <span className="text-[#2B4FBF]">Before They Steal From You</span>
         </h1>
 

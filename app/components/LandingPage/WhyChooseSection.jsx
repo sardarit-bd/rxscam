@@ -48,7 +48,7 @@ export default function WhyChooseSection() {
 
   return (
     <section className="w-full bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="mb-12 text-center">
           <div className="mb-3 flex items-center justify-center gap-2">

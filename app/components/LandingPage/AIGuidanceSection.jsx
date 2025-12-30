@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function AIGuidanceSection() {
   return (
     <section className="bg-slate-800 py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 text-red-500 text-sm font-semibold mb-4">

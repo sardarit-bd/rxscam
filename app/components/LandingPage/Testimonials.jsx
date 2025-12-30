@@ -39,7 +39,7 @@ export default function Testimonials() {
 
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-green-50/30 to-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14">
           <div className="flex items-center justify-center space-x-2 mb-4">

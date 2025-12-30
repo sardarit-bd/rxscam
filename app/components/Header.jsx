@@ -29,9 +29,9 @@ export default function Header({ userLoggedIn = false }) {
       ];
 
   return (
-    <header className="relative w-full">
+    <header className="fixed w-full inset-0 z-50 h-fit">
       {/* Main Navigation Bar - Desktop */}
-      <div className="hidden md:flex flex-row items-center px-[59px] py-8 gap-[103px] h-[116px] bg-blue-800 w-full">
+      <div className="hidden md:flex flex-row items-center gap-[103px] h-fit py-5 bg-blue-800 w-full">
         
         
         {/* Desktop Navigation Links */}
@@ -108,10 +108,10 @@ export default function Header({ userLoggedIn = false }) {
             )}
             
             <button 
-              className="text-white p-2"
+              className="text-white p-0 cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 

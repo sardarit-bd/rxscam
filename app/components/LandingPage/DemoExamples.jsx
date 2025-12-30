@@ -69,7 +69,7 @@ export default function DemoExamples() {
 
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14">
           {/* Badge */}
