@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import logo from "../../public/logo.png";
 
 export default function Header({ userLoggedIn = false }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,24 +35,14 @@ export default function Header({ userLoggedIn = false }) {
         
         
         {/* Desktop Navigation Links */}
-        <nav className="flex-1 flex items-center justify-between">
+        <nav className="flex-1 flex items-center justify-between container mx-auto">
 
         {/* Logo Section */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <div className="flex items-center space-x-2">
-                <div className="relative w-8 h-8">
-                    <Image
-                    src="/logo1.png"
-                    alt="ScamRx Icon"
-                    fill
-                    className="object-contain"
-                    />
-                </div>
-                <div className="text-white font-bold text-2xl">
-                    <h2 className="font-bold text-3xl text-white ">Scam<span className="text-blue-400">RX</span></h2>
-                </div>
-                </div>
+              <Image src={logo} alt="Logo" width={100} height={100} className="w-auto h-auto"/>   
+            </div>
           </Link>
         </div>
 
@@ -97,7 +88,7 @@ export default function Header({ userLoggedIn = false }) {
       </div>
 
       {/* Mobile Header */}
-      <div className="md:hidden bg-blue-800">
+      <div className="md:hidden bg-blue-800 container mx-auto">
         {/* Mobile Header Top Bar */}
         <div className="flex items-center justify-between px-4 py-4">
           <Link href="/" className="flex items-center">
