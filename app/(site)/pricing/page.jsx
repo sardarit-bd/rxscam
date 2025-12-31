@@ -1,8 +1,7 @@
 'use client';
 
-import Link from 'next/link';
-import { useState } from 'react';
 import { Check, Shield } from 'lucide-react';
+import { useState } from 'react';
 
 export default function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -25,12 +24,12 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center">
       {/* Main Content */}
-      <div className="flex flex-col items-center w-full px-40 py-16">
+      <div className="flex flex-col items-center w-full container mx-auto px-4 md:px-0 py-16">
         {/* Title */}
         <h1 className="font-bold text-4xl text-gray-900 mb-6 text-center">
           Simple plans to protect you and your family
         </h1>
-        
+
         {/* Subtitle */}
         <p className="font-inter font-normal text-lg text-gray-600 mb-12 text-center">
           All plans include access to the ScamRX, Scam Engine and URL checker
@@ -38,13 +37,13 @@ export default function PricingPage() {
 
         {/* Toggle Switch */}
         <div className="flex items-center justify-center mb-16 space-x-4">
-  
+
           {/* Monthly Button */}
           <button
             onClick={() => setIsAnnual(false)}
             className={`px-5 py-2 rounded-xl font-inter font-medium transition
-              ${!isAnnual 
-                ? 'bg-blue-600 text-white' 
+              ${!isAnnual
+                ? 'pbg text-white'
                 : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
           >
@@ -56,8 +55,8 @@ export default function PricingPage() {
             <button
               onClick={() => setIsAnnual(true)}
               className={`px-5 py-2 rounded-xl font-inter font-medium transition
-                ${isAnnual 
-                  ? 'bg-blue-600 text-white' 
+                ${isAnnual
+                  ? 'pbg text-white'
                   : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
             >
@@ -78,7 +77,7 @@ export default function PricingPage() {
             <div className="mb-8">
               <h3 className="font-bold text-3xl text-gray-900 mb-4">Individual</h3>
               <div className="mb-4">
-                <span className="font-bold text-5xl text-blue-700">
+                <span className="font-bold text-5xl pcl">
                   ${isAnnual ? annualPrice.individual.toFixed(2) : monthlyPrice.individual}
                 </span>
                 <span className="font-inter font-normal text-gray-600 ml-2">
@@ -90,7 +89,7 @@ export default function PricingPage() {
                   Save 20% vs monthly
                 </p>
               )}
-              <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
+              <button className="w-full pbg text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
                 Choose Plan
               </button>
             </div>
@@ -153,15 +152,15 @@ export default function PricingPage() {
           </div>
 
           {/* Family Plan - Most Popular */}
-          <div className="flex flex-col p-8 border-2 border-blue-600 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative scale-[1.02]">
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-6 py-2 rounded-full font-inter font-semibold text-sm">
+          <div className="flex flex-col p-8 border-2 border-blue-800 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative scale-[1.02]">
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pbg text-white px-6 py-2 rounded-full font-inter font-semibold text-sm">
               Most Popular
             </div>
-            
+
             <div className="mb-8 mt-4">
               <h3 className="font-bold text-3xl text-gray-900 mb-4">Family</h3>
               <div className="mb-4">
-                <span className="font-bold text-5xl text-blue-700">
+                <span className="font-bold text-5xl pcl">
                   ${isAnnual ? annualPrice.family.toFixed(2) : monthlyPrice.family}
                 </span>
                 <span className="font-inter font-normal text-gray-600 ml-2">
@@ -173,7 +172,7 @@ export default function PricingPage() {
                   Save 20% vs monthly
                 </p>
               )}
-              <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
+              <button className="w-full pbg text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
                 Choose Plan
               </button>
             </div>
@@ -244,7 +243,7 @@ export default function PricingPage() {
             <div className="mb-8">
               <h3 className="font-bold text-3xl text-gray-900 mb-4">Elder Assist</h3>
               <div className="mb-4">
-                <span className="font-bold text-5xl text-blue-700">
+                <span className="font-bold text-5xl pcl">
                   ${isAnnual ? annualPrice.elder.toFixed(2) : monthlyPrice.elder}
                 </span>
                 <span className="font-inter font-normal text-gray-600 ml-2">
@@ -256,7 +255,7 @@ export default function PricingPage() {
                   Save 20% vs monthly
                 </p>
               )}
-              <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
+              <button className="w-full pbg text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
                 Choose Plan
               </button>
             </div>
@@ -337,17 +336,17 @@ export default function PricingPage() {
 
         {/* Email Protection Section */}
         <div className="relative w-full rounded-2xl border border-gray-200 bg-gradient-to-br from-green-50 via-white to-white p-8 mb-20 shadow-sm overflow-hidden">
-        
-        {/* Green glow */}
-        <div className="absolute -top-12 -left-12 h-40 w-40 bg-green-300/40 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Badge */}
-        <span className="relative inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
-          Best Value · Annual Only
-        </span>
+          {/* Green glow */}
+          <div className="absolute -top-12 -left-12 h-40 w-40 bg-green-300/40 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Content */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          {/* Badge */}
+          <span className="relative inline-block bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
+            Best Value · Annual Only
+          </span>
+
+          {/* Content */}
+          <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
             {/* Left */}
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-3">
@@ -385,7 +384,7 @@ export default function PricingPage() {
                 <div>Max devices: <span className="font-semibold text-gray-800">Unlimited</span></div>
               </div>
 
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+              <button className="pbg text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                 Choose Plan
               </button>
             </div>
@@ -443,9 +442,9 @@ export default function PricingPage() {
         </div>
 
         {/* Risk-Free Trial */}
-        <div className="w-full bg-blue-700 rounded-2xl py-10 px-6 text-center text-white">
+        <div className="w-full pbg rounded-2xl py-10 px-6 text-center text-white">
           {/* Logo Icon */}
-          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-600">
+          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-300">
             <Shield size={40} />
           </div>
 
@@ -465,7 +464,7 @@ export default function PricingPage() {
             </button>
           </div>
         </div>
-      </div>    
+      </div>
     </div>
   );
 }

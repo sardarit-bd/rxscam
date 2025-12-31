@@ -1,57 +1,51 @@
 // app/components/Header.js
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import logo from "../../public/logo.png";
 
-export default function Header({ userLoggedIn = false }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Header({ }) {
 
-  const navItems = userLoggedIn 
-    ? [
-        { name: 'Dashboard', href: '/dashboard' },
-        { name: 'URL Check', href: '/url-checker' },
-        { name: 'Breach Check', href: '/breach-check' },
-        { name: 'Pricing', href: '/pricing' },
-        { name: 'Glossary', href: '/glossary' },
-        { name: 'Scam Outr', href: '#' },
-        { name: 'FAQ', href: '/faq' },
-      ]
-    : [
-        { name: 'URL Check', href: '/url-checker' },
-        { name: 'Breach Check', href: '/breach-check' },
-        { name: 'Pricing', href: '/pricing' },
-        { name: 'Glossary', href: '/glossary' },
-        { name: 'Scam Outr', href: '#' },
-        { name: 'FAQ', href: '/faq' },
-      ];
+  const pathName = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [userLoggedIn, setuserLoggedIn] = useState(false);
+
+  const navItems = [
+    { name: 'ScamRX DEMO', href: '/' },
+    { name: 'URL Check', href: '/url-check' },
+    { name: 'Breach Check', href: '/breach-check' },
+    { name: 'Plan & Pricing', href: '/pricing' },
+    { name: 'Education', href: '/faq' },
+  ];
+
 
   return (
     <header className="fixed w-full inset-0 z-50 h-fit">
       {/* Main Navigation Bar - Desktop */}
-      <div className="hidden md:flex flex-row items-center gap-[103px] h-fit py-5 bg-blue-800 w-full">
-        
-        
+      <div className="hidden md:flex flex-row items-center gap-[103px] h-fit py-5 pbg w-full">
+
+
         {/* Desktop Navigation Links */}
         <nav className="flex-1 flex items-center justify-between container mx-auto">
 
-        {/* Logo Section */}
-        <div className="flex items-center">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="flex items-center space-x-2">
-              <Image src={logo} alt="Logo" width={100} height={100} className="w-auto h-auto"/>   
-            </div>
-          </Link>
-        </div>
+          {/* Logo Section */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2">
+                <Image src={logo} alt="Logo" width={100} height={100} className="w-auto h-auto" />
+              </div>
+            </Link>
+          </div>
 
-          <div className="flex items-center gap-[50px] ml-8">
+          <div className="flex items-center gap-10 ml-8">
             {navItems.map((item) => (
-              <Link 
-                key={item.name} 
+              <Link
+                key={item.name}
                 href={item.href}
-                className="text-white hover:text-blue-200 font-medium text-lg whitespace-nowrap"
+                className={`hover:text-blue-200 font-medium text-lg whitespace-nowrap ${pathName == item.href ? "text-[#60A5FA]" : 'text-white'}`}
               >
                 {item.name}
               </Link>
@@ -62,13 +56,13 @@ export default function Header({ userLoggedIn = false }) {
           <div className="flex items-center gap-6">
             {!userLoggedIn ? (
               <>
-                <Link 
+                <Link
                   href="/login"
                   className="text-white hover:text-blue-200 font-medium text-lg"
                 >
                   Login
                 </Link>
-                <Link 
+                <Link
                   href="/login"
                   className="bg-white text-blue-800 hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold text-lg transition-colors duration-200"
                 >
@@ -76,7 +70,7 @@ export default function Header({ userLoggedIn = false }) {
                 </Link>
               </>
             ) : (
-              <Link 
+              <Link
                 href="/dashboard"
                 className="bg-white text-blue-800 hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold text-lg transition-colors duration-200"
               >
@@ -96,26 +90,26 @@ export default function Header({ userLoggedIn = false }) {
               <h2 className="font-bold text-3xl text-white ">Scam<span className="text-blue-400">RX</span></h2>
             </div>
           </Link>
-          
+
           <div className="flex items-center gap-4">
             {!userLoggedIn && (
-              <Link 
+              <Link
                 href="/signup"
                 className="bg-white text-blue-800 hover:bg-gray-100 px-4 py-1.5 rounded-lg font-semibold text-sm transition-colors duration-200"
               >
                 Get Started
               </Link>
             )}
-            
-            <button 
+
+            <button
               className="text-white p-0 cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth="2" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
                 />
               </svg>
@@ -127,8 +121,8 @@ export default function Header({ userLoggedIn = false }) {
         {isMenuOpen && (
           <div className="bg-blue-900 border-t border-blue-700">
             {navItems.map((item) => (
-              <Link 
-                key={item.name} 
+              <Link
+                key={item.name}
                 href={item.href}
                 className="block text-white hover:bg-blue-700 font-medium py-3 px-6 border-b border-blue-800"
                 onClick={() => setIsMenuOpen(false)}
@@ -136,17 +130,17 @@ export default function Header({ userLoggedIn = false }) {
                 {item.name}
               </Link>
             ))}
-            
+
             {!userLoggedIn ? (
               <>
-                <Link 
+                <Link
                   href="/login"
                   className="block text-white hover:bg-blue-700 font-medium py-3 px-6 border-b border-blue-800"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Login
                 </Link>
-                <Link 
+                <Link
                   href="/login"
                   className="block bg-white text-blue-800 font-medium py-3 px-6"
                   onClick={() => setIsMenuOpen(false)}
@@ -155,7 +149,7 @@ export default function Header({ userLoggedIn = false }) {
                 </Link>
               </>
             ) : (
-              <Link 
+              <Link
                 href="/dashboard"
                 className="block bg-white text-blue-800 font-medium py-3 px-6"
                 onClick={() => setIsMenuOpen(false)}

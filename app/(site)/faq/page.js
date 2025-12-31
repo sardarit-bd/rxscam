@@ -188,7 +188,7 @@ export default function FAQPage() {
         </div>
 
         {/* Contact Section */}
-        <div className="w-full bg-[#1E40AF] border border-blue-700 rounded-3xl shadow-xl p-10 mb-5">
+        <div className="w-full pbg border border-blue-700 rounded-3xl shadow-xl p-10 mb-5">
             <div className="text-center mb-10">
                 <h2 className="font-bold text-4xl text-white mb-4">
                 Still have questions?
@@ -199,10 +199,10 @@ export default function FAQPage() {
             </div>
             
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <button className="bg-white text-blue-900 font-inter font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg min-w-[180px]">
+                <button className="bg-white text-blue-900 font-inter font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg min-w-[180px] cursor-pointer">
                 Get Started
                 </button>
-                <button className="bg-transparent border-2 border-white text-white font-inter font-semibold py-4 px-8 rounded-lg hover:bg-white/10 transition-colors min-w-[180px]">
+                <button className="bg-transparent border-2 border-white text-white font-inter font-semibold py-4 px-8 rounded-lg hover:bg-white/10 transition-colors min-w-[180px] cursor-pointer">
                 Contact Support
                 </button>
             </div>         

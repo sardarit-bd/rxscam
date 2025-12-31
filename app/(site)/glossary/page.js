@@ -131,7 +131,7 @@ export default function GlossaryPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-12">
 
         {/* Header */}
         <div className="text-center mb-16">

@@ -1,48 +1,18 @@
 'use client';
 
 import {
-  Globe,
+  AlertCircle,
   AlertTriangle,
+  CircleCheckBig,
   Clock,
   Database,
-  ShieldAlert,
   Lock,
-  AlertCircle,
-  CircleCheckBig
+  ShieldAlert
 } from 'lucide-react';
 
 export default function WebsiteCheckerPage() {
   return (
     <div className="min-h-screen bg-[#f8fafc] flex flex-col items-center px-4 py-16">
-
-      {/* Header */}
-      <div className="text-center mb-10 ">
-        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-          <Globe className="text-blue-600" />
-        </div>
-        <h1 className="text-2xl font-semibold text-gray-900">
-          Check a Website URL
-        </h1>
-        <p className="text-sm text-gray-500 mt-1">
-          Find out if a website is safe before you click.
-        </p>
-      </div>
-
-      {/* URL Input */}
-      <div className="w-full max-w-4xl bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-10">
-        <input
-          type="text"
-          placeholder="https://example.com"
-          className="w-full rounded-lg border border-gray-200 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <button className="mt-4 w-full rounded-lg bg-blue-600 py-3 text-sm font-medium text-white hover:bg-blue-700 transition">
-          Check URL
-        </button>
-        <p className="mt-3 text-center text-xs text-gray-400">
-          We'll scan domain age, reputation, and phishing/malware reports.
-        </p>
-      </div>
-
       {/* ================= BOX 1: RESULT + SECURITY ================= */}
       <div className="w-full max-w-4xl bg-white rounded-2xl border border-gray-200 shadow-sm p-8 mb-8">
 
@@ -137,13 +107,13 @@ export default function WebsiteCheckerPage() {
       {/* ================= BOX 3: RECOMMENDED ACTIONS + CTA ================= */}
       <div className="w-full max-w-4xl bg-white border border-gray-200 rounded-2xl shadow-sm p-8">
         <div className="flex items-center gap-3 mb-7">
-                <div className="rounded-lg">
-                  <CircleCheckBig className="text-blue-600" size={24}/>
-                </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-900">
-                 Recommended Actions
-                </h3>
-              </div>
+          <div className="rounded-lg">
+            <CircleCheckBig className="text-blue-600" size={24} />
+          </div>
+          <h3 className="text-lg md:text-xl font-bold text-gray-900">
+            Recommended Actions
+          </h3>
+        </div>
 
         <div className="space-y-5 mb-8">
           <ActionItem
@@ -163,32 +133,32 @@ export default function WebsiteCheckerPage() {
           />
         </div>
 
-        
+
       </div>
       <div className="relative  max-w-4xl rounded-2xl overflow-hidden mt-6">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-800"></div>
-              
-              <div className="absolute inset-0 opacity-10" style={{
-               
-              }}></div>
-              
-              <div className="relative p-6 md:p-8">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                  <div className="flex-1">
-                    <h4 className="text-lg md:text-xl font-bold text-white mb-3">
-                      Worried about phishing after a breach?
-                    </h4>
-                    <p className="text-blue-100 text-sm md:text-base">
-                      Use ScanRx Scam Engine to check suspicious messages and protect yourself from follow-up attacks
-                    </p>
-                  </div>
-                  
-                  <button className="bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition whitespace-nowrap">
-                    Try Scam Engine →
-                  </button>
-                </div>
-              </div>
-            </div>   
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-800"></div>
+
+        <div className="absolute inset-0 opacity-10" style={{
+
+        }}></div>
+
+        <div className="relative p-6 md:p-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="flex-1">
+              <h4 className="text-lg md:text-xl font-bold text-white mb-3">
+                Worried about phishing after a breach?
+              </h4>
+              <p className="text-blue-100 text-sm md:text-base">
+                Use ScanRx Scam Engine to check suspicious messages and protect yourself from follow-up attacks
+              </p>
+            </div>
+
+            <button className="bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition whitespace-nowrap">
+              Try Scam Engine →
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

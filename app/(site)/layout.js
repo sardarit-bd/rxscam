@@ -8,7 +8,7 @@ export default function SiteLayouts({ children }) {
     
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-1 pt-[83px]">
+          <main className="flex-1 pt-[67px] md:pt-[83px]">
             {children}
           </main>
           <Footer />
