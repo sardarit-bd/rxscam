@@ -11,7 +11,7 @@ export default function Testimonials() {
       badge: "Verified Scam Prevented",
       badgeColor: "bg-green-100 text-green-700",
       savings: "$8,500",
-      bgColor: "bg-green-50"
+      bgColor: "bg-white"
     },
     {
       initial: "RC",
@@ -22,7 +22,7 @@ export default function Testimonials() {
       badge: "Family Plan User",
       badgeColor: "bg-blue-100 text-blue-700",
       savings: null,
-      bgColor: "bg-white border-2 border-gray-200"
+      bgColor: "bg-white border border-[#10B981]"
     },
     {
       initial: "ST",
@@ -33,18 +33,18 @@ export default function Testimonials() {
       badge: "Business Protected",
       badgeColor: "bg-teal-100 text-teal-700",
       savings: "$12,000",
-      bgColor: "bg-green-50"
+      bgColor: "bg-white"
     }
   ];
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-green-50/30 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-green-100">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-sm sm:text-base font-semibold text-blue-600 tracking-wide uppercase">
               Verified Success Stories
@@ -63,11 +63,11 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`${testimonial.bgColor} rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-md transition-shadow`}
+              className={`${testimonial.bgColor} rounded-2xl p-6 sm:p-7 transition-shadow`}
             >
               {/* Avatar and Name */}
               <div className="flex items-start space-x-4 mb-4">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 pbg rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-white font-bold text-lg">
                     {testimonial.initial}
                   </span>
@@ -87,7 +87,7 @@ export default function Testimonials() {
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <svg
                     key={i}
-                    className="w-5 h-5 text-yellow-400"
+                    className="w-6 h-6 text-[#F59E0B]"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -112,7 +112,7 @@ export default function Testimonials() {
 
               {/* Badge */}
               <div className="inline-block">
-                <span className={`${testimonial.badgeColor} px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium`}>
+                <span className={`${testimonial.badgeColor} px-3 py-1.5 rounded-md text-xs sm:text-sm font-medium`}>
                   ✓ {testimonial.badge}
                 </span>
               </div>

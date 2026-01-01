@@ -3,7 +3,7 @@ import React from 'react';
 export default function StatsCards() {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto">
         <div className="bg-[#1e293b] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {/* Scans Today Card */}

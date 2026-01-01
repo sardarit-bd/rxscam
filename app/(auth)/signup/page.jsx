@@ -1,94 +1,73 @@
+'use client'; // Important for React hooks in Next.js App Router
+
 import Link from 'next/link';
 
 export default function SignupPage() {
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
-      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
-        <div className="text-center">
-          <div className="bg-blue-600 text-white px-3 py-1 rounded font-bold text-xl inline-block mb-4">
-            ScamRx
-          </div>
-          <h2 className="text-3xl font-bold">Create your account</h2>
-          <p className="text-gray-600 mt-2">Check scams in seconds</p>
+
+    <div className="">
+      {/* Card */}
+      <div className="bg-white w-full lg:w-[550px] rounded-xl shadow-2xl p-6 lg:p-10">
+        {/* Tabs */}
+        <div className="flex bg-gray-100 rounded-xl p-2 mb-6 w-full max-w-[550px]">
+          <Link
+            href={'/login'}
+            className={`flex-1 py-3 text-md font-semibold text-center rounded-md transition text-gray-500`}
+          >
+            Log In
+          </Link>
+
+          <Link
+            href={'/signup'}
+            className={`flex-1 py-3 text-md font-semibold text-center rounded-md transition bg-white shadow text-gray-900`}
+          >
+            Create Account
+          </Link>
         </div>
-        
-        <form className="mt-8 space-y-6">
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Full Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                className="mt-1 w-full p-3 border border-gray-300 rounded-lg"
-                placeholder="Enter your full name"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                className="mt-1 w-full p-3 border border-gray-300 rounded-lg"
-                placeholder="Enter your email"
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                required
-                className="mt-1 w-full p-3 border border-gray-300 rounded-lg"
-                placeholder="Create a password"
-              />
-            </div>
+
+
+        <form className="space-y-2">
+          <div className='py-2'>
+            <label className="text-md text-gray-600">Full Name</label>
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="mt-1 w-full border placeholder-gray-300 border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
 
-          <div>
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700"
-            >
-              Create Account
-            </button>
+          <div className='py-2'>
+            <label className="text-md text-gray-600">Email Address</label>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              className="mt-1 w-full border placeholder-gray-300 border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
+
+          <div className='py-2'>
+            <label className="text-md text-gray-600">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="mt-1 w-full border placeholder-gray-300 border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className='py-2'>
+            <label className="text-md text-gray-600">Confirm Password</label>
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              className="mt-1 w-full border placeholder-gray-300 border-gray-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <button className="w-full pbg text-white my-2 py-4 rounded-lg font-semibold">
+            Create Account
+          </button>
         </form>
-
-        <div className="text-center mt-4">
-          <p className="text-gray-600">
-            Already have an account?{' '}
-            <Link href="/login" className="text-blue-600 hover:text-blue-500 font-semibold">
-              Sign in
-            </Link>
-          </p>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 text-center mt-8">
-          <div>
-            <div className="text-2xl font-bold text-blue-600">95%</div>
-            <div className="text-sm text-gray-600">Accuracy</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-blue-600">50K+</div>
-            <div className="text-sm text-gray-600">Scans</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-blue-600">10K+</div>
-            <div className="text-sm text-gray-600">Detected</div>
-          </div>
-        </div>
       </div>
     </div>
   );

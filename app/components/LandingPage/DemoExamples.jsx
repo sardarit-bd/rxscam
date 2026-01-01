@@ -1,4 +1,6 @@
-import React from 'react';
+import Image from "next/image";
+import logo from "../../../public/logo-2.png";
+
 
 export default function DemoExamples() {
   const examples = [
@@ -69,7 +71,7 @@ export default function DemoExamples() {
 
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14">
           {/* Badge */}
@@ -84,15 +86,9 @@ export default function DemoExamples() {
 
           {/* Logo */}
           <div className="flex items-center justify-center space-x-2 mb-6">
-            <div className="w-10 h-12 bg-blue-600 rounded flex items-center justify-center shadow-lg">
-              <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor">
-                <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z"/>
-              </svg>
+            <div className="flex items-center space-x-2">
+              <Image src={logo} alt="Logo" width={200} height={200} className="w-auto h-auto" />
             </div>
-            <span className="text-4xl sm:text-5xl font-bold">
-              <span className="text-gray-900">Scam</span>
-              <span className="text-blue-600">Rx</span>
-            </span>
           </div>
 
           {/* Title and Description */}

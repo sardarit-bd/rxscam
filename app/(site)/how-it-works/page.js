@@ -10,7 +10,7 @@ import {
 export default function HowScamRXWorks() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-7xl mx-auto py-20">
+      <div className="container mx-auto py-20">
 
         {/* Header */}
         <div className="text-center mb-16">
@@ -32,7 +32,7 @@ export default function HowScamRXWorks() {
             <div>
               <div className="flex items-center gap-4 mb-6">
                 <span className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
-                  <Globe className="text-blue-600 w-6 h-6" />
+                  <Globe className="pcl w-6 h-6" />
                 </span>
                 <h3 className="text-2xl font-bold text-gray-900">
                   On-site Scam Engine
@@ -45,7 +45,7 @@ export default function HowScamRXWorks() {
 
               <ul className="space-y-5 text-base text-gray-700">
                 <li className="flex gap-4">
-                  <span className="text-blue-600 font-bold text-lg">1</span>
+                  <span className="pcl font-bold text-lg">1</span>
                   <div>
                     <span className="font-medium">Paste any suspicious message</span>
                     <p className="text-gray-500 text-sm mt-1">
@@ -55,7 +55,7 @@ export default function HowScamRXWorks() {
                 </li>
 
                 <li className="flex gap-4">
-                  <span className="text-blue-600 font-bold text-lg">2</span>
+                  <span className="pcl font-bold text-lg">2</span>
                   <div>
                     <span className="font-medium">Get instant analysis & score</span>
                     <p className="text-gray-500 text-sm mt-1">
@@ -65,7 +65,7 @@ export default function HowScamRXWorks() {
                 </li>
 
                 <li className="flex gap-4">
-                  <span className="text-blue-600 font-bold text-lg">3</span>
+                  <span className="pcl font-bold text-lg">3</span>
                   <div>
                     <span className="font-medium">Review and save to dashboard</span>
                     <p className="text-gray-500 text-sm mt-1">
@@ -75,7 +75,7 @@ export default function HowScamRXWorks() {
                 </li>
               </ul>
 
-              <button className="mt-10 inline-flex items-center gap-3 bg-blue-700 text-white text-base font-medium px-6 py-4 rounded-lg hover:bg-blue-800 transition-colors">
+              <button className="mt-10 inline-flex items-center gap-3 pbg text-white text-base font-medium px-6 py-4 rounded-lg hover:bg-blue-800 transition-colors">
                 Try Scam Engine
                 <ArrowRight size={20} />
               </button>
@@ -206,11 +206,11 @@ export default function HowScamRXWorks() {
                 <div className="flex justify-between items-start mb-3">
                     <div>
                         <p className="text-sm text-gray-500 mb-3">Your forwarding address:</p>
-                        <p className="text-lg font-semibold text-blue-600">
+                        <p className="text-lg font-semibold pcl">
                             check@scamrx.com
                         </p>
                     </div>
-                    <button className="flex items-center gap-2 text-sm bg-blue-50 text-blue-600 hover:bg-blue-100 font-medium px-4 py-2 rounded-lg transition-colors">
+                    <button className="flex items-center gap-2 text-sm bg-blue-50 pcl hover:bg-blue-100 font-medium px-4 py-2 rounded-lg transition-colors">
                     <Copy size={16} />
                     Copy
                     </button>
@@ -285,10 +285,10 @@ export default function HowScamRXWorks() {
                   ScamRx SMS number:
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-lg font-semibold text-blue-600">
+                  <span className="text-lg font-semibold pcl">
                     +1 (555) 123-4567
                   </span>
-                  <button className="flex items-center gap-2 text-sm bg-blue-50 text-blue-600 px-4 py-2 rounded-lg">
+                  <button className="flex items-center gap-2 text-sm bg-blue-50 pcl px-4 py-2 rounded-lg">
                     <Copy size={16} /> Copy
                   </button>
                 </div>
@@ -312,7 +312,7 @@ export default function HowScamRXWorks() {
                 </div>
 
                 {/* Forward Button */}
-                <div className="bg-blue-700 mr-12 rounded-[15px_0_15px_15px] px-4 py-3 text-center shadow-lg">
+                <div className="pbg mr-12 rounded-[15px_0_15px_15px] px-4 py-3 text-center shadow-lg">
                     <p className="text-sm text-white font-medium">
                         Forward to +1 (555) 123-4567                        
                     </p>
@@ -466,7 +466,7 @@ export default function HowScamRXWorks() {
         {/* ===================== */}
         {/* CTA */}
         {/* ===================== */}
-        <div className="bg-blue-700 rounded-2xl p-14 mt-20 text-center text-white">
+        <div className="pbg rounded-2xl p-14 mt-20 text-center text-white">
           <h3 className="text-3xl font-bold mb-3">
             Ready to protect yourself and your family?
           </h3>

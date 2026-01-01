@@ -1,12 +1,12 @@
-import { Mail, Search, FileText, Bell, Briefcase, AlertTriangle, Users, ShieldCheck } from "lucide-react"
+import { AlertTriangle, Bell, Briefcase, FileText, Mail, Search, ShieldCheck, Users } from "lucide-react"
 
 export default function EmailForwardingSection() {
   return (
     <section className="bg-blue-50/50 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         {/* Premium Feature Badge */}
         <div className="flex justify-center mb-6">
-          <div className="bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm font-medium">
+          <div className="pbg text-white px-4 py-2 rounded-md flex items-center gap-2 text-sm font-medium">
             <span className="text-yellow-400">⭐</span>
             PREMIUM FEATURE
           </div>
