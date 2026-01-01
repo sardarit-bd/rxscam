@@ -1,5 +1,6 @@
 'use client';
 
+import ProductImage from '@/app/components/pricing/ProductImage';
 import { Check, Shield } from 'lucide-react';
 import { useState } from 'react';
 
@@ -73,8 +74,9 @@ export default function PricingPage() {
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
           {/* Individual Plan */}
-          <div className="flex flex-col p-8 border border-gray-200 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            <div className="mb-8">
+          <div className="flex flex-col border border-gray-200 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <ProductImage />
+            <div className="mb-8 p-8">
               <h3 className="font-bold text-3xl text-gray-900 mb-4">Individual</h3>
               <div className="mb-4">
                 <span className="font-bold text-5xl pcl">
@@ -95,7 +97,7 @@ export default function PricingPage() {
             </div>
 
             {/* Features List */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-8 p-8">
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
                 <span className="font-inter font-normal text-gray-700">30 scans per month</span>
@@ -135,7 +137,7 @@ export default function PricingPage() {
             </div>
 
             {/* Scan Limits */}
-            <div className="border-t border-gray-200 pt-6">
+            <div className="border-t border-gray-200 pt-6 p-8">
               <div className="flex justify-between items-center mb-3">
                 <span className="font-inter font-normal text-gray-600">Scan limits:</span>
                 <span className="font-inter font-semibold text-gray-800">50/month</span>
@@ -152,12 +154,14 @@ export default function PricingPage() {
           </div>
 
           {/* Family Plan - Most Popular */}
-          <div className="flex flex-col p-8 border-2 border-blue-800 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative scale-[1.02]">
+          <div className="flex flex-col border-2 border-blue-800 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative scale-[1.02]">
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pbg text-white px-6 py-2 rounded-full font-inter font-semibold text-sm">
               Most Popular
             </div>
 
-            <div className="mb-8 mt-4">
+            <ProductImage />
+
+            <div className="mb-8 mt-4 p-8">
               <h3 className="font-bold text-3xl text-gray-900 mb-4">Family</h3>
               <div className="mb-4">
                 <span className="font-bold text-5xl pcl">
@@ -178,7 +182,7 @@ export default function PricingPage() {
             </div>
 
             {/* Features List */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-8 p-8">
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
                 <span className="font-inter font-normal text-gray-700">200 scans per month</span>
@@ -222,7 +226,7 @@ export default function PricingPage() {
             </div>
 
             {/* Scan Limits */}
-            <div className="border-t border-gray-200 pt-6">
+            <div className="border-t border-gray-200 pt-6 p-8">
               <div className="flex justify-between items-center mb-3">
                 <span className="font-inter font-normal text-gray-600">Scan limits:</span>
                 <span className="font-inter font-semibold text-gray-800">230/month</span>
@@ -239,8 +243,9 @@ export default function PricingPage() {
           </div>
 
           {/* Elder Assist Plan */}
-          <div className="flex flex-col p-8 border border-gray-200 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            <div className="mb-8">
+          <div className="flex flex-col border border-gray-200 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <ProductImage />
+            <div className="mb-8 p-8">
               <h3 className="font-bold text-3xl text-gray-900 mb-4">Elder Assist</h3>
               <div className="mb-4">
                 <span className="font-bold text-5xl pcl">
@@ -261,7 +266,7 @@ export default function PricingPage() {
             </div>
 
             {/* Features List */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-8 p-8">
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
                 <span className="font-inter font-normal text-gray-700">500 scans per month</span>
@@ -317,7 +322,7 @@ export default function PricingPage() {
             </div>
 
             {/* Scan Limits */}
-            <div className="border-t border-gray-200 pt-6">
+            <div className="border-t border-gray-200 pt-6 p-8">
               <div className="flex justify-between items-center mb-3">
                 <span className="font-inter font-normal text-gray-600">Scan limits:</span>
                 <span className="font-inter font-semibold text-gray-800">500/month</span>
@@ -444,7 +449,7 @@ export default function PricingPage() {
         {/* Risk-Free Trial */}
         <div className="w-full pbg rounded-2xl py-10 px-6 text-center text-white">
           {/* Logo Icon */}
-          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-300">
+          <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FFFFFF33]">
             <Shield size={40} />
           </div>
 

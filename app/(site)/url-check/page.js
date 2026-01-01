@@ -1,11 +1,11 @@
 'use client'
 
-import { useRef, useState } from "react";
-
 import SpinLoader from "@/app/components/SpinLoader";
 import UrlCheckerResult from "@/app/components/url-check/UrlCheckerResult";
 import scrollIntoView from "@/app/utility/scrollIntoView";
 import { Globe, Search } from "lucide-react";
+import { useRef, useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -28,7 +28,7 @@ export default function URLCheckerPage() {
     e.preventDefault();
 
     if (!url) {
-      alert('Please enter a valid url');
+      toast('Please enter a valid url');
       return;
     }
 
@@ -112,7 +112,7 @@ export default function URLCheckerPage() {
           isresultShow && <UrlCheckerResult />
         }
       </div>
-
+      <Toaster />
     </section>
   )
 }
