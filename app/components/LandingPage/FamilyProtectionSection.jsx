@@ -1,4 +1,4 @@
-import { Users, Bell, BarChart3, Share2 } from "lucide-react"
+import { BarChart3, Bell, Share2, Users } from "lucide-react"
 
 export default function FamilyProtectionSection() {
   return (
@@ -30,7 +30,7 @@ export default function FamilyProtectionSection() {
           {/* Family Members List */}
           <div className="space-y-3 mb-6">
             {/* Mom */}
-            <div className="flex items-center justify-between p-4 bg-blue-50 rounded-lg border border-blue-100">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-blue-50 rounded-lg border border-blue-100">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-lg">
                   MA
@@ -49,7 +49,7 @@ export default function FamilyProtectionSection() {
             </div>
 
             {/* Dad */}
-            <div className="flex items-center justify-between p-4 bg-purple-50 rounded-lg border border-purple-100">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-purple-50 rounded-lg border border-purple-100">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-semibold text-lg">
                   DJ
@@ -68,7 +68,7 @@ export default function FamilyProtectionSection() {
             </div>
 
             {/* Grandma */}
-            <div className="flex items-center justify-between p-4 bg-pink-50 rounded-lg border border-red-200">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-pink-50 rounded-lg border border-red-200">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-semibold text-lg">
                   GM
@@ -87,7 +87,7 @@ export default function FamilyProtectionSection() {
             </div>
 
             {/* Sister */}
-            <div className="flex items-center justify-between p-4 bg-orange-50 rounded-lg border border-orange-100">
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between p-4 bg-orange-50 rounded-lg border border-orange-100">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-semibold text-lg">
                   S
@@ -109,11 +109,11 @@ export default function FamilyProtectionSection() {
           {/* Alert Box */}
           <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+              <div className="hidden md:block w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                 🚨
               </div>
               <div className="flex-1">
-                <div className="flex items-center justify-between mb-2">
+                <div className="flex flex-col md:flex-row justify-start items-center md:justify-between mb-2">
                   <h4 className="font-semibold text-gray-900">High Risk Alert - Grandma (Mary)</h4>
                   <span className="text-sm text-gray-500">30 minutes ago</span>
                 </div>
@@ -122,7 +122,7 @@ export default function FamilyProtectionSection() {
                   immediate payment for new card.{" "}
                   <span className="text-red-600 font-semibold">96% scam likelihood detected.</span>
                 </p>
-                <div className="flex gap-3">
+                <div className="flex flex-col md:flex-row gap-3">
                   <button className="bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-700">
                     View Full Report
                   </button>

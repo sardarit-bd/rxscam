@@ -1,5 +1,6 @@
 'use client';
 
+import { ChevronDown } from "lucide-react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -36,14 +37,6 @@ const SmallDevice = () => {
                 <LogoSection />
 
                 <div className="flex items-center gap-4">
-                    {!userLoggedIn && (
-                        <Link
-                            href="/signup"
-                            className="bg-white text-blue-800 hover:bg-gray-100 px-4 py-1.5 rounded-lg font-semibold text-sm transition-colors duration-200"
-                        >
-                            Get Started
-                        </Link>
-                    )}
 
                     <button
                         className="text-white p-0 cursor-pointer"
@@ -63,30 +56,54 @@ const SmallDevice = () => {
 
             {/* Mobile Navigation Menu */}
             {isMenuOpen && (
-                <div className="bg-blue-900 border-t border-blue-700">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="block text-white hover:bg-blue-700 font-medium py-3 px-6 border-b border-blue-800"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {item.name}
-                        </Link>
+                <div className="bg-blue-900 border-t h-screen p-4 border-blue-700">
+                    {navItems.map((item, index) => (
+
+
+                        <div className='relative group flex items-center rounded-md p-2 py-4 hover:bg-blue-800 gap-2 border-b border-blue-800 ' key={index}>
+                            <Link
+                                href={item.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className={`hover:text-blue-200 font-medium text-lg whitespace-nowrap ${pathName == item.href ? "text-[#60A5FA]" : 'text-white'}`}
+                            >
+                                {item.name}
+                            </Link>
+                            {item?.nested && (
+                                <ChevronDown className={`group-hover:rotate-180 transition-all duration-300 ${pathName == item.href ? "text-[#60A5FA]" : 'text-white'}`} />
+                            )}
+                            {
+                                item?.nested && (
+                                    <div className='hidden group-hover:flex transition-all duration-300 absolute top-7 left-0 bg-white px-6 py-2 rounded-lg font-semibold text-lg transition-colors duration-200 shadow-xl flex-col gap-3'>
+                                        {item.sub.map((subItem, index) => (
+                                            <Link
+                                                href={subItem.href}
+                                                className={`text-blue-900 hover:text-blue-800 font-semibold text-lg whitespace-nowrap `}
+                                                key={index}
+                                            >
+                                                {subItem.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )
+                            }
+                        </div>
+
+
+
                     ))}
 
                     {!userLoggedIn ? (
                         <>
                             <Link
                                 href="/login"
-                                className="block text-white hover:bg-blue-700 font-medium py-3 px-6 border-b border-blue-800"
+                                className="block text-white hover:bg-blue-700 font-medium py-3 px-3 pb-9 border-b border-blue-800 hover:text-blue-200 font-medium text-lg whitespace-nowrap text-white"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Login
                             </Link>
                             <Link
                                 href="/login"
-                                className="block bg-white text-blue-800 font-medium py-3 px-6"
+                                className="block rounded-md bg-white text-blue-800 font-medium py-3 px-6"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Get Started Free
