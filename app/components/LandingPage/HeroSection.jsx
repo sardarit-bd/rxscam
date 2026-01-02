@@ -1,4 +1,5 @@
-import React from 'react';
+// import { Link } from 'lucide-react';
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -7,12 +8,12 @@ export default function HeroSection() {
         {/* Badge */}
         <div className="flex justify-center mb-8 sm:mb-10">
           <div className="inline-flex items-center space-x-2 bg-[#2B4FBF] text-white px-5 py-3 rounded-md shadow-lg">
-            <svg 
-              className="w-5 h-5" 
-              fill="currentColor" 
+            <svg
+              className="w-6 h-6 animate-bounce"
+              fill="currentColor"
               viewBox="0 0 24 24"
             >
-              <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z"/>
+              <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />
             </svg>
             <span className="font-semibold text-sm sm:text-base tracking-wide">
               AI-POWERED SCAM PROTECTION
@@ -38,44 +39,47 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 sm:mb-8">
-          <button className="w-full sm:w-auto bg-[#2B4FBF] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[#2441a8] transition-colors shadow-lg text-base sm:text-lg">
+
+          <Link href={"/login"} className="w-full sm:w-auto bg-[#2B4FBF] text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-[#2441a8] transition-colors shadow-lg text-base sm:text-lg cursor-pointer">
             Start Free Trial
-          </button>
-          <button className="w-full sm:w-auto bg-white text-gray-800 font-semibold px-8 py-3.5 rounded-lg border-2 border-gray-300 hover:border-gray-400 transition-colors text-base sm:text-lg">
+          </Link>
+
+
+          <Link href={"/how-it-work"} className="w-full sm:w-auto bg-white text-gray-800 font-semibold px-8 py-3.5 rounded-lg border-2 border-gray-300 hover:border-gray-400 transition-colors text-base sm:text-lg cursor-pointer">
             See How It Works
-          </button>
+          </Link>
         </div>
 
         {/* Features */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm sm:text-base text-gray-600">
           <div className="flex items-center space-x-2">
-            <svg 
-              className="w-5 h-5 text-green-600" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-5 h-5 text-green-600"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M5 13l4 4L19 7" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
               />
             </svg>
             <span>No credit card required</span>
           </div>
           <div className="flex items-center space-x-2">
-            <svg 
-              className="w-5 h-5 text-green-600" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-5 h-5 text-green-600"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M5 13l4 4L19 7" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
               />
             </svg>
             <span>3-day free trial</span>

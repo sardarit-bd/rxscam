@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function HowItWorks() {
   const features = [
@@ -106,7 +105,7 @@ export default function HowItWorks() {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* Step Content */}
                 <div className="flex-1 pt-1">
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">

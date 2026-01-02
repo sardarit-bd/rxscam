@@ -1,11 +1,11 @@
 'use client'
 
-import SpinLoader from "@/app/components/SpinLoader";
-import UrlCheckerResult from "@/app/components/url-check/UrlCheckerResult";
-import scrollIntoView from "@/app/utility/scrollIntoView";
 import { Globe, Search } from "lucide-react";
 import { useRef, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
+import SpinLoader from "../../components/SpinLoader";
+import UrlCheckerResult from "../../components/url-check/UrlCheckerResult";
+import scrollIntoView from "../../utility/scrollIntoView";
 
 
 
