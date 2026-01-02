@@ -36,11 +36,11 @@ export default function GlossaryCard({
 
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 text-sm text-blue-600 mt-4 hover:underline"
+        className="flex items-center gap-1 text-sm pcl mt-4 hover:underline"
       >
         {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         {open ? "Show less" : "More details"}
-        
+
       </button>
     </div>
   );

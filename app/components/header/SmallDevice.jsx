@@ -18,9 +18,9 @@ const SmallDevice = () => {
         { name: 'Plan & Pricing', href: '/pricing', nested: false },
         {
             name: 'Education', href: '/faq', nested: true, sub: [
-                { name: 'Glossary', href: '/faq', nested: false },
+                { name: 'Glossary', href: '/glossary', nested: false },
                 { name: 'Scam Quiz', href: '/faq', nested: false },
-                { name: 'How It Works', href: '/faq', nested: false },
+                { name: 'How It Works', href: '/how-it-work', nested: false },
                 { name: 'Resources', href: '/faq', nested: false },
                 { name: 'FAQ', href: '/faq', nested: false }
             ]

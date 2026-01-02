@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Search } from "lucide-react";
-import JumpSidebar from "../../components/JumpSidebar";
+import { useState } from "react";
 import GlossaryCard from "../../components/GlossaryCard";
+import JumpSidebar from "../../components/JumpSidebar";
 
 export default function GlossaryPage() {
   const [search, setSearch] = useState("");
@@ -58,7 +58,7 @@ export default function GlossaryPage() {
       description:
         "Creating email addresses or websites that closely resemble legitimate ones.",
     },
-    { 
+    {
       letter: "M",
       title: "Malware",
       subtitle: "Malicious software that damages or infiltrates sys",
@@ -142,13 +142,13 @@ export default function GlossaryPage() {
             Understand common scam terms and protect yourself from fraud
           </p>
 
-          <div className="relative max-w-xl mx-auto mt-10">
+          <div className="relative max-w-2xl mx-auto mt-10">
             <Search className="absolute left-3 top-3.5 h-5 w-5 text-gray-400" />
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search for a term..."
-              className="w-full pl-10 pr-4 py-3 text-sm border border-gray-200 rounded-lg"
+              className="w-full pl-10 pr-4 text-gray-400 py-3 text-sm border-2 border-gray-200 rounded-lg"
             />
           </div>
         </div>
@@ -164,7 +164,7 @@ export default function GlossaryPage() {
 
                 {/* Letter header */}
                 <div className="flex items-center mb-6">
-                  <span className="w-9 h-9 flex items-center justify-center rounded-xl bg-blue-600 text-white font-semibold">
+                  <span className="w-9 h-9 flex items-center justify-center rounded-xl pbg text-white font-semibold">
                     {letter}
                   </span>
                   <div className="flex-1 h-px bg-gray-200"></div>

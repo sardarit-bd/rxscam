@@ -1,10 +1,10 @@
 "use client";
 
-import { Pointer, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 export default function JumpSidebar() {
-  const letters = ["A","B","C","D","E","I","M","P","R","S","T","V","W"];
+  const letters = ["A", "B", "C", "D", "E", "I", "M", "P", "R", "S", "T", "V", "W"];
   const [activeLetter, setActiveLetter] = useState("A");
 
   const handleClick = (letter) => {
@@ -18,7 +18,7 @@ export default function JumpSidebar() {
   };
 
   return (
-    <div className="bg-gray-100 border border-gray-200 rounded-xl p-4 h-fit">
+    <div className="bg-gray-100 border border-gray-200 rounded-xl p-4 h-fit sticky top-32">
       <h3 className="text-lg font-bold text-gray-900 mb-3">
         Jump to
       </h3>
@@ -31,7 +31,7 @@ export default function JumpSidebar() {
             onClick={() => handleClick(letter)}
             className={`w-full text-left px-3 py-2 text-sm rounded-md
               ${activeLetter === letter
-                ? "bg-blue-600 text-white"
+                ? "pbg text-white"
                 : "bg-white text-gray-600 hover:bg-white"}
             `}
           >
@@ -48,7 +48,7 @@ export default function JumpSidebar() {
         <p className="text-xs text-gray-600 my-3">
           Learn how to use our tools to protect yourself
         </p>
-        <button className="mt-3 w-full bg-blue-600 text-white text-sm py-3 px-4 rounded-md hover:bg-blue-700 flex items-center justify-center gap-2">
+        <button className="mt-3 w-full pbg text-white text-sm py-3 px-4 rounded-md flex items-center justify-center gap-2 cursor-pointer">
           How to Use ScamRx <ArrowRight size={16} />
         </button>
       </div>
