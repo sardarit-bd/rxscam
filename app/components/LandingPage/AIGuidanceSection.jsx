@@ -1,4 +1,4 @@
-import { Trophy, AlertTriangle } from "lucide-react"
+import { AlertTriangle, Trophy } from "lucide-react"
 import Link from "next/link"
 
 export default function AIGuidanceSection() {
@@ -172,10 +172,13 @@ export default function AIGuidanceSection() {
 
         {/* CTA Button */}
         <div className="text-center">
-          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors mb-4">
-            Start Your Free Protection
-          </button>
-          <p className="text-slate-400 text-sm">
+          <div className="mb-8">
+            <Link href="/login" className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors ">
+              Start Your Free Protection
+            </Link>
+          </div>
+
+          <p className="text-slate-400 text-sm pt-4">
             Available with <span className="text-white font-semibold">PLUS & DELUXE</span> • No Setup Fees • Cancel
             Anytime
           </p>

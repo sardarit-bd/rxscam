@@ -1,4 +1,5 @@
 import { Trophy } from "lucide-react"
+import Link from "next/link"
 
 export default function ProtectionLevelSection() {
   return (
@@ -19,9 +20,11 @@ export default function ProtectionLevelSection() {
         </p>
 
         {/* CTA Button */}
-        <button className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-          View All Plans & Pricing
-        </button>
+        <Link href={"/pricing"}>
+          <button className="cursor-pointer bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+            View All Plans & Pricing
+          </button>
+        </Link>
       </div>
     </section>
   )

@@ -1,6 +1,5 @@
-import ScamRxFeatureSectionAIHotline from "@/app/components/how-it-work/ScamRxFeatureSectionAIHotline";
+import ScamRxFeatureSectionAIHotline from "../../components/how-it-work/ScamRxFeatureSectionAIHotline";
 
-const { Divide } = require("lucide-react")
 
 const HowItWork = () => {
     return (

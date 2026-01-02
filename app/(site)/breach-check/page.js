@@ -1,10 +1,10 @@
 "use client"
-import SpinLoader from "@/app/components/SpinLoader";
-import BreachCheckerResult from "@/app/components/breach-check/BreachCheckerResult";
-import scrollIntoView from "@/app/utility/scrollIntoView";
 import { Lock, Mail } from "lucide-react";
 import { useRef, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
+import SpinLoader from "../../components/SpinLoader";
+import BreachCheckerResult from "../../components/breach-check/BreachCheckerResult";
+import scrollIntoView from "../../utility/scrollIntoView";
 
 
 

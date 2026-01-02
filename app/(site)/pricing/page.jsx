@@ -1,8 +1,8 @@
 'use client';
 
-import ProductImage from '@/app/components/pricing/ProductImage';
 import { Check, Shield } from 'lucide-react';
 import { useState } from 'react';
+import ProductImage from '../../components/pricing/ProductImage';
 
 export default function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(false);
