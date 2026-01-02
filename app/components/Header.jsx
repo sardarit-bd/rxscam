@@ -5,7 +5,7 @@ export default function Header({ }) {
 
 
   return (
-    <header className="fixed w-full inset-0 z-50 h-fit">
+    <header className="fixed w-full inset-0 z-50 h-fit pbg w-full">
 
       {/* Main Navigation Bar - Desktop */}
       <LeargeDevice />

@@ -24,6 +24,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 
@@ -32,5 +33,30 @@ body {
 }
 
 .pcl {
-  color: var(--primary-color)!important;
+  color: var(--primary-color) !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px !important;
+  margin: 0 auto;
+}
+
+@media (min-width:768px) {
+  .container {
+    padding: 0px 40px;
+  }
+}
+
+
+@media (min-width:1024px) {
+  .container {
+    padding: 0px 40px;
+  }
+}
+
+@media (min-width:1440px) {
+  .container {
+    padding: 0px 0px;
+  }
 }

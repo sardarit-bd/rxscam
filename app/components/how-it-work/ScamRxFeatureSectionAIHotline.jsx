@@ -157,7 +157,7 @@ export default function ScamRxFeatureSectionAIHotline() {
 
                 {/* Real-World Example */}
                 <div className="bg-gradient-to-br from-violet-500/10 to-violet-600/5 border-2 border-violet-500/30 rounded-2xl p-8">
-                    <div className="flex gap-4 items-start">
+                    <div className="flex flex-col md:flex-row gap-4 items-start">
                         <div className="text-[40px] leading-none">💬</div>
                         <div className="flex-1">
                             <p className="text-white text-xl italic leading-relaxed m-0 mb-3 font-medium">
