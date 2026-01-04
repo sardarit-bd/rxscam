@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function ScamAnalyzer() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -18,14 +18,15 @@ export default function ScamAnalyzer() {
     }, 3000);
   };
 
+
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-8 space-y-6">
+    <div className="w-full max-w-6xl mx-auto px-4 py-16 space-y-6">
       {/* Input Section */}
       <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 sm:p-8">
         <label className="block text-lg font-semibold text-gray-900 mb-4">
           Enter Suspicious Message Here
         </label>
-        
+
         <div className="space-y-4">
           {/* Message Type Badge */}
           <div className="inline-block bg-gray-100 text-gray-600 px-3 py-1.5 rounded-lg text-sm font-medium">
@@ -64,7 +65,7 @@ export default function ScamAnalyzer() {
               <div className="w-16 h-16 border-4 border-gray-200 rounded-full"></div>
               <div className="absolute top-0 left-0 w-16 h-16 border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
             </div>
-            
+
             {/* Scanning Text */}
             <p className="text-xl sm:text-2xl font-semibold text-gray-600">
               Scanning Now....
@@ -80,7 +81,7 @@ export default function ScamAnalyzer() {
             {/* Warning Icon */}
             <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center">
               <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L1 21h22L12 2zm0 3.5L19.5 19h-15L12 5.5zM11 10v4h2v-4h-2zm0 5v2h2v-2h-2z"/>
+                <path d="M12 2L1 21h22L12 2zm0 3.5L19.5 19h-15L12 5.5zM11 10v4h2v-4h-2zm0 5v2h2v-2h-2z" />
               </svg>
             </div>
 

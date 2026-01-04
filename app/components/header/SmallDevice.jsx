@@ -4,13 +4,13 @@ import { ChevronDown } from "lucide-react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import LogedInUser from "./LogedInUser";
 import LogoSection from './LogoSection';
 
-const SmallDevice = () => {
+const SmallDevice = ({ userLoggedIn, setuserLoggedIn }) => {
 
     const pathName = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [userLoggedIn, setuserLoggedIn] = useState(false);
 
     const navItems = [
         { name: 'ScamRX DEMO', href: '/', nested: false },
@@ -110,13 +110,7 @@ const SmallDevice = () => {
                             </Link>
                         </>
                     ) : (
-                        <Link
-                            href="/dashboard"
-                            className="block bg-white text-blue-800 font-medium py-3 px-6"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Go to Dashboard
-                        </Link>
+                        <LogedInUser />
                     )}
                 </div>
             )}
