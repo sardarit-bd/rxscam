@@ -22,8 +22,13 @@ export default function PricingPage() {
     email: 19.95 / 12 // Monthly equivalent
   };
 
+
+
+
+
+
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center">
+    <div className="min-h-screen bg-white flex flex-col items-center py-14">
       {/* Main Content */}
       <div className="flex flex-col items-center w-full container mx-auto px-4 md:px-0 py-16">
         {/* Title */}
@@ -71,8 +76,9 @@ export default function PricingPage() {
           </div>
         </div>
 
+
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full mb-16">
           {/* Individual Plan */}
           <div className="flex flex-col border border-gray-200 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
             <ProductImage />
