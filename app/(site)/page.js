@@ -1,11 +1,10 @@
 import AIGuidanceSection from '../components/LandingPage/AIGuidanceSection';
 import AlertBanner from '../components/LandingPage/AlertBanner';
-import DemoExamples from '../components/LandingPage/DemoExamples';
+import DemoExamplesAndResult from '../components/LandingPage/DemoExampleAndResult';
 import EmailForwardingSection from '../components/LandingPage/EmailForwardingSection';
 import FamilyProtectionSection from '../components/LandingPage/FamilyProtectionSection';
 import HeroSection from '../components/LandingPage/HeroSection';
 import ProtectionLevelSection from '../components/LandingPage/ProtectionLevelSection';
-import ScamAnalyzer from '../components/LandingPage/ScamAnalyzer';
 import StatsCards from '../components/LandingPage/StatsCards';
 import Testimonials from '../components/LandingPage/Testimonials';
 import WhyChooseSection from '../components/LandingPage/WhyChooseSection';
@@ -20,9 +19,7 @@ export default function Home() {
       <StatsCards />
       <Testimonials />
       <ScamRxFeatureSectionAIHotline />
-      {/* <HowItWorks /> */}
-      <DemoExamples />
-      <ScamAnalyzer />
+      <DemoExamplesAndResult />
       <EmailForwardingSection />
       <FamilyProtectionSection />
       <AIGuidanceSection />

@@ -1,0 +1,96 @@
+'use client'
+
+import { useState } from 'react';
+import ScamDetectionPage from '../scanResult/Landingpage/ScamDetectionPage';
+
+const BankAlertInput = ({ selectedExample }) => {
+
+
+    const [isAnalyzing, setIsAnalyzing] = useState(false);
+    const [showResult, setShowResult] = useState(false);
+    const [isSafe, setIsSafe] = useState(false); // false = danger, true = safe
+    const [message, setMessage] = useState('Fake fraud alert claiming suspicious transactions on your account requiring verification');
+
+    const handleAnalyze = () => {
+        setIsAnalyzing(true);
+        setShowResult(false);
+
+        // Simulate analysis delay
+        setTimeout(() => {
+            setIsAnalyzing(false);
+            setShowResult(true);
+        }, 3000);
+    };
+
+
+
+
+    return (
+        <div className="w-full container mx-auto px-4 py-16 space-y-6">
+            {/* Input Section */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 sm:p-8">
+                <label className="block text-lg font-semibold text-gray-900 mb-4 flex items-center gap-4">
+                    <svg className="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                    <span>Enter Suspicious Bank Alert Message Here</span>
+                </label>
+
+                <div className="space-y-4">
+                    {/* Message Type Badge */}
+                    <div className="inline-block bg-gray-100 text-gray-600 px-3 py-1.5 rounded-lg text-sm font-medium">
+                        Bank Alert
+                    </div>
+
+                    {/* Message Input */}
+                    <textarea
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="Fake fraud alert claiming suspicious transactions on your account requiring verification"
+                        className="w-full h-24 px-4 py-3 text-gray-700 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-blue-800 focus:border-transparent resize-none text-sm sm:text-base"
+                    />
+
+                    {/* Analyze Button */}
+                    <button
+                        onClick={handleAnalyze}
+                        disabled={isAnalyzing}
+                        className="w-full bg-[#2B4FBF] text-white font-semibold py-4 rounded-xl hover:bg-[#2441a8] transition-colors shadow-md disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center space-x-2 cursor-pointer"
+                    >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" opacity="0.3" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        <span className="text-base sm:text-lg">Analyze Bank Alert</span>
+                    </button>
+                </div>
+            </div>
+
+            {/* Scanning State */}
+            {isAnalyzing && (
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-12 sm:p-16">
+                    <div className="flex flex-col items-center justify-center space-y-6">
+                        {/* Spinner */}
+                        <div className="relative">
+                            <div className="w-16 h-16 border-4 border-gray-200 rounded-full"></div>
+                            <div className="absolute top-0 left-0 w-16 h-16 border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
+                        </div>
+
+                        {/* Scanning Text */}
+                        <p className="text-xl sm:text-2xl font-semibold text-gray-600">
+                            Scanning Now....
+                        </p>
+                    </div>
+                </div>
+            )}
+
+            {/* Result State */}
+            {showResult && (
+                <div className={`border-4 rounded-xl ${isSafe ? 'border-green-500' : 'border-red-500'}`}>
+                    <ScamDetectionPage isSafe={isSafe} setIsSafe={setIsSafe} />
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default BankAlertInput;

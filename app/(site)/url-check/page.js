@@ -4,7 +4,7 @@ import { Globe, Search } from "lucide-react";
 import { useRef, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import SpinLoader from "../../components/SpinLoader";
-import UrlCheckerResult from "../../components/url-check/UrlCheckerResult";
+import UrlCheckerResult from "../../components/scanResult/url-check/UrlCheckerResult";
 import scrollIntoView from "../../utility/scrollIntoView";
 
 

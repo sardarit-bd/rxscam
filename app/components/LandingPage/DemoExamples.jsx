@@ -1,8 +1,17 @@
+'use client';
+
 import Image from "next/image";
 import logo from "../../../public/logo-2.png";
 
 
-export default function DemoExamples() {
+export default function DemoExamples({ selectedExample, setSelectedExample }) {
+
+
+
+
+
+
+
   const examples = [
     {
       icon: (
@@ -69,8 +78,12 @@ export default function DemoExamples() {
     }
   ];
 
+
+
+
+
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="w-full px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-10 sm:mb-14">
@@ -104,8 +117,9 @@ export default function DemoExamples() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {examples.map((example, index) => (
             <div
+              onClick={() => { setSelectedExample(index) }}
               key={index}
-              className="bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all cursor-pointer group"
+              className={`bg-white rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-lg hover:border-blue-800 transition-all cursor-pointer group ${selectedExample === index ? "border border-blue-800 shadow-lg" : selectedExample === index ? "border border-blue-800 shadow-lg" : selectedExample === index ? "border border-blue-800 shadow-lg" : "border border-gray-200"}`}
             >
               {/* Icon */}
               <div className="mb-5">
@@ -113,7 +127,7 @@ export default function DemoExamples() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-900 transition-colors">
                 {example.title}
               </h3>
 
@@ -123,7 +137,7 @@ export default function DemoExamples() {
               </p>
 
               {/* Warning Icons */}
-              <div className="space-y-2.5">
+              <div className="space-y-2.5 opacity-0   transition-opacity duration-1000 ease-in-out group-hover:opacity-100">
                 {example.warnings.map((warning, i) => (
                   <div key={i} className="flex items-start space-x-2">
                     <span className="text-lg flex-shrink-0">{warning.icon}</span>
@@ -132,16 +146,6 @@ export default function DemoExamples() {
                     </span>
                   </div>
                 ))}
-              </div>
-
-              {/* Hover Arrow Indicator */}
-              <div className="mt-5 pt-5 border-t border-gray-100 opacity-100 group-hover:opacity-100 transition-opacity">
-                <div className="flex items-center pcl font-semibold text-sm">
-                  <span>Try this example</span>
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </div>
           ))}
