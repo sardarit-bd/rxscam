@@ -1,4 +1,5 @@
 // import { Link } from 'lucide-react';
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
@@ -8,13 +9,13 @@ export default function HeroSection() {
         {/* Badge */}
         <div className="flex justify-center mb-8 sm:mb-10">
           <div className="inline-flex items-center space-x-2 bg-[#2B4FBF] text-white px-5 py-3 rounded-md shadow-lg">
-            <svg
+            <Image
+              src="https://res.cloudinary.com/dg83pvgls/image/upload/v1767855074/APP-01_2_frwqus.png"
+              alt="AI Icon"
+              width={24}
+              height={24}
               className="w-6 h-6 animate-bounce"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z" />
-            </svg>
+            />
             <span className="font-semibold text-sm sm:text-base tracking-wide">
               AI-POWERED SCAM PROTECTION
             </span>

@@ -83,7 +83,7 @@ const LeargeDevice = ({ userLoggedIn, setuserLoggedIn }) => {
                             </Link>
                             <Link
                                 href="/login"
-                                className="bg-white text-blue-800 hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold text-lg transition-colors duration-200"
+                                className="bg-[#60A5FA] text-gray-100 hover:bg-gray-100 hover:text-[#60A5FA] px-6 py-2 rounded-lg font-semibold text-lg transition-colors duration-200"
                             >
                                 Get Started
                             </Link>
