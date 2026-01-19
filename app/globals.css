@@ -42,6 +42,25 @@ body {
   margin: 0 auto;
 }
 
+.step-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
+  margin-bottom: 35px;
+}
+
+.step-icon svg {
+  width: 50px;
+  height: 50px;
+  fill: white;
+}
+
 @media (min-width:768px) {
   .container {
     padding: 0px 40px;

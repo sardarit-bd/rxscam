@@ -32,7 +32,7 @@ const SmallDevice = ({ userLoggedIn, setuserLoggedIn }) => {
     return (
         <div className="lg:hidden bg-blue-800 container mx-auto">
             {/* Mobile Header Top Bar */}
-            <div className="flex items-center justify-between px-4 py-4">
+            <div className="flex items-center justify-between px-4 py-2">
 
                 <LogoSection />
 

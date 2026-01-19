@@ -7,7 +7,7 @@ const LogoSection = () => {
         <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
                 <div className="flex items-center space-x-2">
-                    <Image src={logo} alt="Logo" width={100} height={100} className="w-auto h-auto" />
+                    <Image src={logo} alt="Logo" width={100} height={100} className="w-[170px] h-auto" />
                 </div>
             </Link>
         </div>

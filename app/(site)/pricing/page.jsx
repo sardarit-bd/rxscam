@@ -9,16 +9,16 @@ export default function PricingPage() {
 
   // Calculate annual prices (20% discount)
   const annualPrice = {
-    individual: 9.99 * 12 * 0.8, // $9.99/month * 12 months * 80% (20% off)
-    family: 19.99 * 12 * 0.8,
-    elder: 34.99 * 12 * 0.8,
+    individual: 90 * 12 * 0.8, // $9.99/month * 12 months * 80% (20% off)
+    family: 170 * 12 * 0.8,
+    elder: 240 * 12 * 0.8,
     email: 19.95 // Yearly price already
   };
 
   const monthlyPrice = {
-    individual: 9.99,
-    family: 19.99,
-    elder: 34.99,
+    individual: 90,
+    family: 170,
+    elder: 240,
     email: 19.95 / 12 // Monthly equivalent
   };
 
@@ -83,7 +83,7 @@ export default function PricingPage() {
           <div className="flex flex-col border border-gray-200 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
             <ProductImage />
             <div className="mb-8 p-8">
-              <h3 className="font-bold text-3xl text-gray-900 mb-4">Individual</h3>
+              <h3 className="font-bold text-3xl text-gray-900 mb-4">Individual Membership</h3>
               <div className="mb-4">
                 <span className="font-bold text-5xl pcl">
                   ${isAnnual ? annualPrice.individual.toFixed(2) : monthlyPrice.individual}
@@ -98,7 +98,7 @@ export default function PricingPage() {
                 </p>
               )}
               <button className="w-full pbg text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
-                Choose Plan
+                Get protected Now
               </button>
             </div>
 
@@ -106,55 +106,43 @@ export default function PricingPage() {
             <div className="space-y-4 mb-8 p-8">
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">30 scans per month</span>
+                <span className="font-inter font-normal text-gray-700">20+ community updates across per month (SMS, email, calls, web ads, social media)</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Web-based scan engine</span>
+                <span className="font-inter font-normal text-gray-700">AI-powered threat analysis</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">URL checker</span>
+                <span className="font-inter font-normal text-gray-700">Real-time alerts & 50+ scam path location with strong verification</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Breach monitoring</span>
+                <span className="font-inter font-normal text-gray-700">Dedicated: Scam notification & history tracking</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Scan history & dashboard</span>
+                <span className="font-inter font-normal text-gray-700">Call Screening, Voicemail analysis including "Safe/Caution/Danger" message detection</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Email forwarding</span>
+                <span className="font-inter font-normal text-gray-700">SMS Text & email inbox protection & 5-star detection metrics = analysis on accuracy score</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">SMS text scanning</span>
+                <span className="font-inter font-normal text-gray-700">AES-256 encryption, GDPR compliance</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Family monitoring</span>
+                <span className="font-inter font-normal text-gray-700">Protected account limits & configured fraud 3 step security verification</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Priority support</span>
+                <span className="font-inter font-normal text-gray-700">Email support & data history</span>
               </div>
-            </div>
-
-            {/* Scan Limits */}
-            <div className="border-t border-gray-200 pt-6 p-8">
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-inter font-normal text-gray-600">Scan limits:</span>
-                <span className="font-inter font-semibold text-gray-800">50/month</span>
-              </div>
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-inter font-normal text-gray-600">Max devices:</span>
-                <span className="font-inter font-semibold text-gray-800">3/month</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="font-inter font-normal text-gray-600">Family members:</span>
-                <span className="font-inter font-semibold text-gray-800">-</span>
+              <div className="flex items-center">
+                <Check className="text-green-500 mr-3 h-5 w-5" />
+                <span className="font-inter font-normal text-gray-700">Access to other scam & budget resources</span>
               </div>
             </div>
           </div>
@@ -168,7 +156,7 @@ export default function PricingPage() {
             <ProductImage />
 
             <div className="mb-8 mt-4 p-8">
-              <h3 className="font-bold text-3xl text-gray-900 mb-4">Family</h3>
+              <h3 className="font-bold text-3xl text-gray-900 mb-4">Family Membership</h3>
               <div className="mb-4">
                 <span className="font-bold text-5xl pcl">
                   ${isAnnual ? annualPrice.family.toFixed(2) : monthlyPrice.family}
@@ -183,7 +171,7 @@ export default function PricingPage() {
                 </p>
               )}
               <button className="w-full pbg text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
-                Choose Plan
+                Get protected Now
               </button>
             </div>
 
@@ -191,68 +179,45 @@ export default function PricingPage() {
             <div className="space-y-4 mb-8 p-8">
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">200 scans per month</span>
+                <span className="font-inter font-normal text-gray-700">Everything in Individual Plan</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Web-based scan engine</span>
+                <span className="font-inter font-normal text-gray-700">Protect your entire family (up to 5 family members)</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">URL checker</span>
+                <span className="font-inter font-normal text-gray-700">Family access controls & oversight for youth protection</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Breach monitoring</span>
+                <span className="font-inter font-normal text-gray-700">Individual real-time scam alerts for each family member via SMS, email, push, or phone call</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Scan history & dashboard</span>
+                <span className="font-inter font-normal text-gray-700">Family admin Mixed Voice/Service (MVS) and Hotline access</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Email forwarding</span>
+                <span className="font-inter font-normal text-gray-700">Ability to automatically categorize recent transactions for financial health</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">SMS text scanning</span>
+                <span className="font-inter font-normal text-gray-700">Multi-account support</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Up to 5 family members</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Family monitoring & alerts</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Priority support</span>
+                <span className="font-inter font-normal text-gray-700">Priority support for your family protection needs</span>
               </div>
             </div>
 
-            {/* Scan Limits */}
-            <div className="border-t border-gray-200 pt-6 p-8">
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-inter font-normal text-gray-600">Scan limits:</span>
-                <span className="font-inter font-semibold text-gray-800">230/month</span>
-              </div>
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-inter font-normal text-gray-600">Max devices:</span>
-                <span className="font-inter font-semibold text-gray-800">10/month</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="font-inter font-normal text-gray-600">Family members:</span>
-                <span className="font-inter font-semibold text-gray-800">-</span>
-              </div>
-            </div>
           </div>
 
           {/* Elder Assist Plan */}
           <div className="flex flex-col border border-gray-200 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
             <ProductImage />
             <div className="mb-8 p-8">
-              <h3 className="font-bold text-3xl text-gray-900 mb-4">Elder Assist</h3>
+              <h3 className="font-bold text-3xl text-gray-900 mb-4">High Risk Membership</h3>
               <div className="mb-4">
                 <span className="font-bold text-5xl pcl">
                   ${isAnnual ? annualPrice.elder.toFixed(2) : monthlyPrice.elder}
@@ -267,7 +232,7 @@ export default function PricingPage() {
                 </p>
               )}
               <button className="w-full pbg text-white py-3 px-6 rounded-lg font-inter font-semibold hover:bg-blue-700 transition-colors">
-                Choose Plan
+                Get Protected Now
               </button>
             </div>
 
@@ -275,71 +240,39 @@ export default function PricingPage() {
             <div className="space-y-4 mb-8 p-8">
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">500 scans per month</span>
+                <span className="font-inter font-normal text-gray-700">Everything in Family Plan</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Web-based scan engine</span>
+                <span className="font-inter font-normal text-gray-700">Protect your Profile for business coverage for individuals/team</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">URL checker</span>
+                <span className="font-inter font-normal text-gray-700">24/7 AI Scan Dectection hotline plus SOC in-person call verification</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Breach monitoring</span>
+                <span className="font-inter font-normal text-gray-700">24 character p/t txt call analysis while maintaining privacy for all</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Scan history & dashboard</span>
+                <span className="font-inter font-normal text-gray-700">Real time notification to protect against cyberattacks</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Email forwarding</span>
+                <span className="font-inter font-normal text-gray-700">Manual Call recording logs & Unlimited storage cap</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">SMS text scanning</span>
+                <span className="font-inter font-normal text-gray-700">On-site history in 30-day (or deeper [New] Inquiry)</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Up to 10 family members</span>
+                <span className="font-inter font-normal text-gray-700">White-glove (enterprise) protection</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Family monitoring & alerts</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Auto-alerts for high-risk scams</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Weekly protection reports</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Priority support</span>
-              </div>
-              <div className="flex items-center">
-                <Check className="text-green-500 mr-3 h-5 w-5" />
-                <span className="font-inter font-normal text-gray-700">Dedicated support line</span>
-              </div>
-            </div>
-
-            {/* Scan Limits */}
-            <div className="border-t border-gray-200 pt-6 p-8">
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-inter font-normal text-gray-600">Scan limits:</span>
-                <span className="font-inter font-semibold text-gray-800">500/month</span>
-              </div>
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-inter font-normal text-gray-600">Max devices:</span>
-                <span className="font-inter font-semibold text-gray-800">25/month</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="font-inter font-normal text-gray-600">Family members:</span>
-                <span className="font-inter font-semibold text-gray-800">10</span>
+                <span className="font-inter font-normal text-gray-700">Dedicated support team (with phone access)</span>
               </div>
             </div>
           </div>
@@ -476,6 +409,6 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
