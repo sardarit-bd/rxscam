@@ -31,7 +31,7 @@ const LeargeDevice = ({ userLoggedIn, setuserLoggedIn }) => {
 
 
     return (
-        <div className="hidden lg:flex flex-row items-center gap-[103px] h-fit py-5 pbg w-full">
+        <div className="hidden lg:flex flex-row items-center gap-[103px] h-fit py-3 pbg w-full">
 
 
             {/* Desktop Navigation Links */}

@@ -4,6 +4,7 @@ import DemoExamplesAndResult from '../components/LandingPage/DemoExampleAndResul
 import EmailForwardingSection from '../components/LandingPage/EmailForwardingSection';
 import FamilyProtectionSection from '../components/LandingPage/FamilyProtectionSection';
 import HeroSection from '../components/LandingPage/HeroSection';
+import HowItWorksProfessional from '../components/LandingPage/HowItWorksProfessional';
 import ProtectionLevelSection from '../components/LandingPage/ProtectionLevelSection';
 import StatsCards from '../components/LandingPage/StatsCards';
 import Testimonials from '../components/LandingPage/Testimonials';
@@ -19,6 +20,7 @@ export default function Home() {
       <StatsCards />
       <Testimonials />
       <ScamRxFeatureSectionAIHotline />
+      <HowItWorksProfessional />
       <DemoExamplesAndResult />
       <EmailForwardingSection />
       <FamilyProtectionSection />
