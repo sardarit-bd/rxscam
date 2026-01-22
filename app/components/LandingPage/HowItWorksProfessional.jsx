@@ -6,7 +6,7 @@ import { Activity, CircleCheck, Link, Mail, Phone, ShieldCheck, TriangleAlert, U
 
 export default function HowItWorksProfessional() {
     return (
-        <section className="bg-slate-50 py-10">
+        <section className="bg-slate-50">
             <div className="">
                 <div className="bg-gradient-to-b from-white to-slate-50 rounded-xl p-10 lg:p-20 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
 
