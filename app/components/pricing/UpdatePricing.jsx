@@ -244,8 +244,9 @@ export default function UpdatePricing() {
                     </div>
                 </div>
 
+
                 {/* Comparison Table */}
-                <div className="mt-16">
+                {/* <div className="mt-16">
                     <h2 className="mb-8 text-center text-[32px] font-bold text-slate-900">Detailed Comparison</h2>
 
                     <div className="overflow-hidden rounded-2xl bg-white shadow-md shadow-black/5 max-[968px]:overflow-x-auto">
@@ -295,10 +296,10 @@ export default function UpdatePricing() {
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> */}
 
                 {/* CTA Section */}
-                <div className="mt-16 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center">
+                {/* <div className="mt-16 rounded-2xl bg-gradient-to-br from-slate-50 to-slate-100 p-12 text-center">
                     <h2 className="mb-4 text-[32px] font-bold text-slate-900">Try ScamRX risk-free</h2>
                     <p className="mb-8 text-[18px] text-slate-500">Get 30 free scans. No credit card required. Cancel anytime.</p>
 
@@ -310,7 +311,7 @@ export default function UpdatePricing() {
                             View FAQ
                         </button>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
