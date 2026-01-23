@@ -244,6 +244,12 @@ export default function UpdatePricing() {
                     </div>
                 </div>
 
+
+
+
+
+
+
                 {/* Comparison Table */}
                 {/* <div className="mt-16">
                     <h2 className="mb-8 text-center text-[32px] font-bold text-slate-900">Detailed Comparison</h2>
