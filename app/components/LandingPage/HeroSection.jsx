@@ -24,17 +24,18 @@ export default function HeroSection() {
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 leading-tight">
-          <span className="bg-[linear-gradient(90deg,#DC2626_0%,#550101_100%)] bg-clip-text text-transparent">Stop Scammers</span>{' '}
-          <span className="text-[#2B4FBF]">Before They Steal From You</span>
+          <span className="text-gray-800">Stop Scammers</span>{' '}
+          <span className="text-gray-800">Before They Steal From You</span>
         </h1>
 
         {/* Subheading */}
-        <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-4 sm:mb-5">
+        <p className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 text-gray-500">
           Know If It's A Scam & What To Do — in Seconds.
         </p>
 
+
         {/* Description */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 max-w-3xl mx-auto">
+        <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-500 mb-10">
           AI Scams Are Getting Smarter. Your Protection Should Be Too.
         </p>
 
