@@ -7,8 +7,8 @@ import { Activity, CircleCheck, Link, Mail, Phone, ShieldCheck, TriangleAlert, U
 export default function HowItWorksProfessional() {
     return (
         <section className="bg-slate-50">
-            <div className="">
-                <div className="bg-gradient-to-b from-white to-slate-50 rounded-xl p-10 lg:p-20 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+            <div className="bg-gradient-to-b from-white to-slate-50 rounded-xl p-10 lg:p-20 shadow-[0_4px_20px_rgba(0,0,0,0.08)]">
+                <div className="container mx-auto">
 
                     {/* Header */}
                     <div className="text-center mb-16">
@@ -51,11 +51,11 @@ export default function HowItWorksProfessional() {
                                 step: 1,
                                 title: 'Submit Any Suspicious Communication',
                                 desc:
-                                    'Forward, paste, use voice-to-text or type in any communication that raised your suspicions. You can also call our 24/7 AI Threat Advisors to get instant guidance.',
+                                    'Forward, paste, use voice-to-text or type in any communication that raised your suspicions. You can also call our 24/7 AI Threat Advisors to get instant guidance. Our system accepts multiple formats—whatever is easiest for you.',
                                 metrics: [{ name: 'Email', icons: <Mail size={16} /> }, { name: 'Phone', icons: <Phone size={16} /> }, { name: 'URL', icons: <Link size={16} /> }, { name: "Text", icons: <Mail size={16} /> }],
                                 svg: (
                                     <div className="step-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2">
                                             <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
                                         </svg>
                                     </div>
@@ -65,11 +65,11 @@ export default function HowItWorksProfessional() {
                                 step: 2,
                                 title: 'AI Analyzes Across 47 Threat Databases',
                                 desc:
-                                    'Our advanced AI cross-references millions of known scam patterns, verifies sender authenticity, and scans for manipulation tactics in seconds.',
+                                    'Our advanced AI uses machine learning to cross-reference millions of known scam patterns, verify sender authenticity, and scan for manipulation tactics in seconds.',
                                 metrics: [{ name: "Results in Seconds", icons: <Zap size={16} /> }, { name: "97.3% Accuracy", icons: <CircleCheck size={16} /> }, { name: 'Private & Secure', icons: <ShieldCheck size={16} /> }],
                                 svg: (
-                                    <div class="step-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                                    <div className="step-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2">
                                             <circle cx="12" cy="12" r="10" />
                                             <path d="M12 6v6l4 2" />
                                         </svg>
@@ -80,11 +80,11 @@ export default function HowItWorksProfessional() {
                                 step: 3,
                                 title: 'Receive Clear Action Steps',
                                 desc:
-                                    'Get an instant verdict in plain English: threat level, specific risks detected, and exactly what to do next.',
+                                    "Get an instant verdict in plain English: threat level, specific risks detected, and exactly what to do next. Family members can opt in to receive alerts when you're at risk.",
                                 metrics: [{ name: "Risk Level", icons: <TriangleAlert size={16} /> }, { name: 'Action Plan', icons: <Activity size={16} /> }, { name: 'Family Alerts', icons: <Users size={16} /> }],
                                 svg: (
-                                    <div class="step-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                                    <div className="step-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2">
                                             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>

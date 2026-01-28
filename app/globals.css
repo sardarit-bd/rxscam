@@ -61,6 +61,22 @@ body {
   fill: white;
 }
 
+.scenario-type {
+  display: inline-block;
+  background: #e4f0ff;
+  color: #2563eb;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+
+
+
 @media (min-width:768px) {
   .container {
     padding: 0px 40px;
