@@ -20,9 +20,9 @@ export default function Home() {
       <Testimonials />
       <HowItWorksProfessional />
       <DemoExamplesAndResult />
+      <ScamRxHotline />
       <ScamRxEmailForwarding />
       <FamilyProtectionSection />
-      <ScamRxHotline />
       <ProtectionLevelSection />
       <WhyChooseSection />
     </div>
