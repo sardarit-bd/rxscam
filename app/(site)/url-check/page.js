@@ -1,4 +1,3 @@
-// frontend/app/url-checker/page.jsx (updated)
 'use client'
 
 import { Globe, Search } from "lucide-react";
@@ -14,7 +13,6 @@ export default function URLCheckerPage() {
   const [isloading, setisloading] = useState(false);
   const [url, seturl] = useState('');
   const [scanResult, setScanResult] = useState(null);
-  const [consent, setConsent] = useState(false);
 
   const isValidUrl = (urlString) => {
     try {
@@ -38,11 +36,6 @@ export default function URLCheckerPage() {
       return;
     }
 
-    if (!consent) {
-      toast('Please confirm your consent to scan this URL');
-      return;
-    }
-
     setisloading(true);
 
     try {
@@ -51,7 +44,7 @@ export default function URLCheckerPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url, consent: true }),
+        body: JSON.stringify({ url, consent: true }), // consent always true
       });
 
       const data = await response.json();
@@ -109,28 +102,10 @@ export default function URLCheckerPage() {
               />
             </div>
 
-            {/* Consent Checkbox */}
-            <div className="flex items-start gap-2">
-              <input
-                type="checkbox"
-                id="consent"
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-                className="mt-1"
-                disabled={isloading}
-              />
-              <label htmlFor="consent" className="text-sm text-gray-600">
-                This URL will be checked against Google's threat database.
-                <a href="/privacy" className="text-blue-600 ml-1 hover:underline">
-                  Privacy policy
-                </a>
-              </label>
-            </div>
-
             {/* Check Button */}
             <button
               onClick={handleCheck}
-              disabled={isloading || !consent}
+              disabled={isloading}
               className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 w-full bg-[#1E40AF] hover:bg-[#2049cf] text-white py-4 text-base font-semibold rounded-lg cursor-pointer`}
             >
               {isloading ? <SpinLoader /> : "Check URL"}
