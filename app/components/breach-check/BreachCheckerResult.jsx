@@ -193,7 +193,7 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
 
             {/* ══ BOX 1: RESULT ══ */}
             <motion.div
-                className="relative w-full max-w-5xl bg-white rounded-2xl border border-gray-200 shadow-sm p-8 mb-8 overflow-hidden"
+                className="relative w-full max-w-5xl bg-white rounded-2xl border border-gray-200 shadow-sm p-8 mb-8 overflow-hidden min-h-[250px]"
                 initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, ease: "easeOut" }}
