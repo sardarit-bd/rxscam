@@ -39,7 +39,7 @@ export default function URLCheckerPage() {
     setisloading(true);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/free/url-scan`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/v1/free/url-scan`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

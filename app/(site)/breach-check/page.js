@@ -16,10 +16,11 @@ export default function BreachCheckSection() {
   const [isresultShow, setisResultShow] = useState(false);
   const [isloading, setisloading] = useState(false);
   const [email, setemail] = useState('');
+  const [ScanResult, setScanResult] = useState([]);
 
 
   /**************** handle url check functin is here *********************/
-  function handleCheck(e) {
+  async function handleCheck(e) {
 
     e.preventDefault();
 
@@ -28,8 +29,39 @@ export default function BreachCheckSection() {
       return;
     }
 
-
     setisloading(true);
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/v1/free/breach-check`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, consent: true }), // consent always true
+      });
+
+      const data = await response.json();
+
+      console.log(data);
+
+      if (data?.success == false) {
+        toast(data.message);
+        return;
+      }
+
+
+      setScanResult(data?.data);
+      setisResultShow(true);
+      scrollIntoView(resultRef);
+    } catch (error) {
+      toast(error.message || 'Failed to Creach Check. Please try again.');
+    } finally {
+      setisloading(false);
+    }
+
+
+
+
 
     setTimeout(() => {
       setisloading(false);
@@ -38,9 +70,6 @@ export default function BreachCheckSection() {
     }, 2000);
 
   }
-
-
-
 
 
 
@@ -102,7 +131,7 @@ export default function BreachCheckSection() {
 
       <div className="scroll-mt-[150px]" ref={resultRef}>
         {
-          isresultShow && <BreachCheckerResult />
+          isresultShow && <BreachCheckerResult ScanResult={ScanResult} />
         }
       </div>
 
