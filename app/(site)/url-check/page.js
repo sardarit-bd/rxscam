@@ -1,3 +1,4 @@
+// frontend/app/url-checker/page.jsx (updated)
 'use client'
 
 import { Globe, Search } from "lucide-react";
@@ -7,42 +8,72 @@ import SpinLoader from "../../components/SpinLoader";
 import UrlCheckerResult from "../../components/scanResult/url-check/UrlCheckerResult";
 import scrollIntoView from "../../utility/scrollIntoView";
 
-
-
 export default function URLCheckerPage() {
-
-
-
-
   const resultRef = useRef(null);
   const [isresultShow, setisResultShow] = useState(false);
   const [isloading, setisloading] = useState(false);
   const [url, seturl] = useState('');
+  const [scanResult, setScanResult] = useState(null);
+  const [consent, setConsent] = useState(false);
 
+  const isValidUrl = (urlString) => {
+    try {
+      const url = new URL(urlString);
+      return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch {
+      return false;
+    }
+  };
 
-
-
-  /**************** handle url check functin is here *********************/
-  function handleCheck(e) {
-
+  const handleCheck = async (e) => {
     e.preventDefault();
 
     if (!url) {
-      toast('Please enter a valid url');
+      toast('Please enter a URL');
       return;
     }
 
+    if (!isValidUrl(url)) {
+      toast('Please enter a valid URL starting with http:// or https://');
+      return;
+    }
+
+    if (!consent) {
+      toast('Please confirm your consent to scan this URL');
+      return;
+    }
 
     setisloading(true);
 
-    setTimeout(() => {
-      setisloading(false);
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/v1/free/url-scan`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url, consent: true }),
+      });
+
+      const data = await response.json();
+
+      if (response.status === 429) {
+        toast(data.message || 'Rate limit exceeded. Try again after 24 hours.');
+        return;
+      }
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Scan failed');
+      }
+
+      setScanResult(data);
       setisResultShow(true);
       scrollIntoView(resultRef);
-    }, 2000);
-
-  }
-
+    } catch (error) {
+      toast(error.message || 'Failed to scan URL. Please try again.');
+    } finally {
+      setisloading(false);
+    }
+  };
 
   return (
     <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-4">
@@ -56,8 +87,12 @@ export default function URLCheckerPage() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">Check a Website URL</h2>
-          <p className="text-center text-gray-600 mb-8">Find out if a website is safe before you click</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-3">
+            Check a Website URL
+          </h2>
+          <p className="text-center text-gray-600 mb-8">
+            Find out if a website is safe before you click
+          </p>
 
           {/* Form */}
           <div className="space-y-4">
@@ -65,38 +100,41 @@ export default function URLCheckerPage() {
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
-                onChange={(e) => { seturl(e.target.value) }}
+                onChange={(e) => seturl(e.target.value)}
+                value={url}
                 type="url"
                 placeholder="https://example.com"
                 className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder:text-gray-400"
+                disabled={isloading}
               />
             </div>
 
-            {/* Email Input */}
-            {/* <div className="relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            {/* Consent Checkbox */}
+            <div className="flex items-start gap-2">
               <input
-                type="email"
-                placeholder="you@example.com"
-                className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 placeholder:text-gray-400"
+                type="checkbox"
+                id="consent"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                className="mt-1"
+                disabled={isloading}
               />
-            </div> */}
+              <label htmlFor="consent" className="text-sm text-gray-600">
+                This URL will be checked against Google's threat database.
+                <a href="/privacy" className="text-blue-600 ml-1 hover:underline">
+                  Privacy policy
+                </a>
+              </label>
+            </div>
 
             {/* Check Button */}
             <button
-              onClick={(e) => { handleCheck(e) }}
-              className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 w-full pbg hover:bg-blue-800 text-white py-4 text-base font-semibold rounded-lg cursor-pointer`}
+              onClick={handleCheck}
+              disabled={isloading || !consent}
+              className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all disabled:pointer-events-none disabled:opacity-50 w-full bg-[#1E40AF] hover:bg-[#2049cf] text-white py-4 text-base font-semibold rounded-lg cursor-pointer`}
             >
-              {
-                isloading ? (
-                  <SpinLoader />
-                ) : (
-                  "Check URL"
-                )
-              }
+              {isloading ? <SpinLoader /> : "Check URL"}
             </button>
-
-
           </div>
 
           {/* Disclaimer */}
@@ -106,13 +144,10 @@ export default function URLCheckerPage() {
         </div>
       </div>
 
-
       <div className="scroll-mt-[150px]" ref={resultRef}>
-        {
-          isresultShow && <UrlCheckerResult />
-        }
+        {isresultShow && scanResult && <UrlCheckerResult data={scanResult} />}
       </div>
       <Toaster />
     </section>
-  )
+  );
 }
