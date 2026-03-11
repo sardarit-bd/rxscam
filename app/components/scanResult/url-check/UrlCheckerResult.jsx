@@ -1,4 +1,3 @@
-// frontend/components/scanResult/url-check/UrlCheckerResult.jsx
 'use client';
 
 import {
@@ -6,8 +5,6 @@ import {
     AlertTriangle,
     CircleCheckBig,
     Clock,
-    Database,
-    Lock,
     ShieldAlert
 } from 'lucide-react';
 
@@ -90,9 +87,9 @@ export default function UrlCheckerResult({ data }) {
                     </div>
 
                     {/* Google Attribution */}
-                    <p className="text-xs text-gray-400 mt-4 text-center">
+                    {/* <p className="text-xs text-gray-400 mt-4 text-center">
                         Powered by Google Web Risk
-                    </p>
+                    </p> */}
                 </div>
             </div>
 
