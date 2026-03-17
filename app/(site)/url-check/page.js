@@ -49,6 +49,9 @@ export default function URLCheckerPage() {
 
       const data = await response.json();
 
+
+      console.log(data);
+
       if (response.status === 429) {
         toast(data.message || 'Rate limit exceeded. Try again after 24 hours.');
         return;
@@ -67,6 +70,8 @@ export default function URLCheckerPage() {
       setisloading(false);
     }
   };
+
+
 
   return (
     <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-4">
