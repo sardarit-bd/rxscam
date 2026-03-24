@@ -445,7 +445,7 @@ export default function UrlCheckerResult({ data }) {
                                     </motion.span>
 
                                     <h2 className="mt-4 text-xl font-semibold text-gray-900">
-                                        <Typewriter text={ai_analysis?.ai_verdict ?? ""} delay={0.5} />
+                                        <Typewriter text={ai_analysis?.ai_verdict ?? " "} delay={0.5} />
                                     </h2>
 
                                     <motion.p
