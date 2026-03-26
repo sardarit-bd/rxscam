@@ -50,8 +50,6 @@ export default function URLCheckerPage() {
       const data = await response.json();
 
 
-      console.log(data);
-
       if (response.status === 429) {
         toast(data.message || 'Rate limit exceeded. Try again after 24 hours.');
         return;
