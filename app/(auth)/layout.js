@@ -9,10 +9,6 @@ export default function AuthLayout({ children }) {
 
   const pathname = usePathname();
 
-
-
-  console.log(pathname);
-
   return (
     <div className="min-h-screen flex items-center justify-center gap-5 pbg">
 
