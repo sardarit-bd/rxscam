@@ -2,7 +2,11 @@
 
 import { BookOpen, CreditCard, Home, Shield } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import setCookie from '../../utility/setCookie';
 import LogoSection from '../header/LogoSection';
+import SpinLoader from '../SpinLoader';
 
 const Aside = ({ isSidebarOpen, activeMenu, setIsSidebarOpen }) => {
 
@@ -14,6 +18,49 @@ const Aside = ({ isSidebarOpen, activeMenu, setIsSidebarOpen }) => {
         { id: 'pricing', href: "/pricing", name: 'Plan & Pricing', icon: CreditCard },
         { id: 'education', href: "/glossary", name: 'Education', icon: BookOpen },
     ];
+
+
+
+    const [isLoading, setIsLoading] = useState(false);
+    const router = useRouter();
+
+
+    // handle sign out function is here
+    const signOut = async (e) => {
+
+
+        e.preventDefault();
+        setIsLoading(true);
+
+        // Make API call to log out
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/logout`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}),
+        });
+
+        const res = await response.json();
+
+        if (res.success) {
+            setCookie("token", '', 1);
+            router.push('/');
+        } else {
+            toast.error(res.message);
+        }
+
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 1000);
+
+
+
+    }
+
+
+
+
 
 
 
@@ -51,7 +98,15 @@ const Aside = ({ isSidebarOpen, activeMenu, setIsSidebarOpen }) => {
                 </nav>
             </div>
             <div className='px-4 absolute bottom-6 w-full'>
-                <button className='text-black bg-white w-full py-2 rounded-md  font-semibold cursor-pointer'>Logout</button>
+                <button onClick={(e) => { signOut(e) }} className='text-black bg-white w-full py-2 rounded-md  font-semibold cursor-pointer flex items-center justify-center'>
+                    {
+                        isLoading ? (
+                            <SpinLoader />
+                        ) : (
+                            <span>Logout</span>
+                        )
+                    }
+                </button>
             </div>
         </aside>
     )

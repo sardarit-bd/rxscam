@@ -188,6 +188,20 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
     /* risk bar position */
     const barPos = Math.min((breachCount / 10) * 100, 100);
 
+
+
+    function sortByRecentBreach(arr = []) {
+        return [...arr].sort((a, b) => {
+            return new Date(b?.BreachDate) - new Date(a?.BreachDate);
+        });
+    }
+
+
+
+    const sortedData = sortByRecentBreach(ScanResult?.breachs);
+
+    console.log(ScanResult);
+
     return (
         <div ref={ref} className="flex flex-col items-center px-4 py-16">
 
@@ -329,7 +343,7 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
             <AnimatePresence>
                 {showContent && isBreached && (
                     <motion.div
-                        className="w-full max-w-5xl bg-red-50 border border-red-200 rounded-2xl p-8 mb-8"
+                        className="hidden w-full max-w-5xl bg-red-50 border border-red-200 rounded-2xl p-8 mb-8"
                         initial={{ opacity: 0, x: -24 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
@@ -434,7 +448,7 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
                         </h3>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {ScanResult?.breachs?.map((item, index) => (
+                            {sortedData?.map((item, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 20, scale: 0.97 }}
@@ -467,6 +481,8 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
                                             </div>
                                         </div>
                                     </div>
+
+                                    <h4 className="text-gray-700 pb-2">Breached Date: {item?.BreachDate}</h4>
 
                                     <p
                                         className="text-sm text-gray-600 leading-relaxed mb-4"
