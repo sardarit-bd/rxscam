@@ -472,8 +472,8 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
                                             />
                                         </motion.div>
                                         <div>
-                                            <h2 className="text-xl font-semibold text-gray-800">{item?.Name}</h2>
-                                            <div className="flex items-center gap-1">
+                                            <h2 className="text-xl font-semibold text-gray-800 text-wrap">{item?.Title}</h2>
+                                            <div className={`flex items-center gap-1 ${item?.Domain ? "block" : "hidden"}`}>
                                                 <a target="_blank" className="text-gray-600/70 text-sm" href={item?.Domain}>
                                                     {item?.Domain}
                                                 </a>
