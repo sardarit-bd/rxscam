@@ -5,7 +5,7 @@ import { Mail } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { toast } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import SpinLoader from "../../components/SpinLoader";
 import setCookie from "../../utility/setCookie";
 
@@ -20,6 +20,12 @@ export default function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
+    if (email === "" || password === "") {
+      toast.error("All fields are required");
+      return;
+    }
+
     setloading(true);
 
 
@@ -29,29 +35,36 @@ export default function LoginPage() {
     };
 
 
+
     // Make API call to add the product
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
 
-    const res = await response.json();
+      const res = await response.json();
 
-    if (res.success) {
-      toast.success(res.message);
-      setCookie("token", res?.data?.token, 1);
-      setemail('');
-      setpassword('');
-      router.push('/dashboard');
-    } else {
-      toast.error(res.message);
+      console.log(res);
+
+      if (res.success) {
+        toast.success(res.message);
+        setCookie("token", res?.data?.token, 1);
+        setemail('');
+        setpassword('');
+        setloading(false);
+        router.push('/dashboard');
+      } else {
+        toast.error(res.message);
+        setloading(false);
+      }
+
+    } catch (error) {
+      console.error(error);
+      setloading(false);
+      toast.error("Something went wrong!");
     }
-
-    setloading(false);
-
 
   };
 
@@ -80,12 +93,13 @@ export default function LoginPage() {
         </ div >
 
 
-        <form className="space-y-4">
+        <div className="space-y-4">
 
 
           <div className='py-2'>
             <label className="text-md text-gray-600">Email Address</label>
             <input
+              value={email}
               onChange={(e) => { setemail(e.target.value) }}
               type="email"
               placeholder="you@example.com"
@@ -96,6 +110,7 @@ export default function LoginPage() {
           <div className='py-2'>
             <label className="text-md text-gray-600">Password</label>
             <input
+              value={password}
               onChange={(e) => { setpassword(e.target.value) }}
               type="password"
               placeholder="Enter your password"
@@ -106,7 +121,7 @@ export default function LoginPage() {
           <button onClick={(e) => { handleSubmit(e) }} className="w-full pbg text-white my-2 py-4 rounded-lg font-semibold flex items-center justify-center mt-4 cursor-pointer">
             {loading ? <SpinLoader /> : "Login"}
           </button>
-        </form>
+        </div>
 
         {/* Divider */}
         <div className="hidden flex items-center gap-3 my-6">
@@ -122,7 +137,7 @@ export default function LoginPage() {
         </button>
       </div >
 
-
+      <Toaster />
     </div >
 
   );
