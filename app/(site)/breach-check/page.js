@@ -32,7 +32,7 @@ export default function BreachCheckSection() {
     setisloading(true);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/v1/free/breach-check`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/v1/free/breach-check`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
