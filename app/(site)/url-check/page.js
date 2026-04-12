@@ -23,6 +23,15 @@ export default function URLCheckerPage() {
     }
   };
 
+  const normalizeUrl = (url) => {
+    if (!url) return "";
+
+    if (url.startsWith("http://") || url.startsWith("https://")) {
+      return url;
+    }
+
+    return `https://${url}`;
+  };
   const handleCheck = async (e) => {
     e.preventDefault();
 
@@ -31,10 +40,9 @@ export default function URLCheckerPage() {
       return;
     }
 
-    if (!isValidUrl(url)) {
-      toast('Please enter a valid URL starting with http:// or https://');
-      return;
-    }
+    const normalizedUrl = normalizeUrl(url);
+
+
 
     setisloading(true);
 
@@ -44,7 +52,7 @@ export default function URLCheckerPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ url, consent: true }), // consent always true
+        body: JSON.stringify({ url: normalizedUrl, consent: true }), // consent always true
       });
 
       const data = await response.json();
