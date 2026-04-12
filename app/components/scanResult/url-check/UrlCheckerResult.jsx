@@ -550,7 +550,7 @@ export default function UrlCheckerResult({ data }) {
             <AnimatePresence>
                 {showContent && (
                     <motion.div
-                        className="w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-sm p-8"
+                        className="hidden w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-sm p-8"
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.35, duration: 0.5, type: "spring" }}
