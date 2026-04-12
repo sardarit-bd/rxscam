@@ -200,7 +200,6 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
 
     const sortedData = sortByRecentBreach(ScanResult?.breachs);
 
-    console.log(ScanResult);
 
     return (
         <div ref={ref} className="flex flex-col items-center px-4 py-16">
@@ -384,7 +383,7 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
             <AnimatePresence>
                 {showContent && isBreached && (
                     <motion.div
-                        className="w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-sm p-8"
+                        className="hidden w-full max-w-5xl bg-white border border-gray-200 rounded-2xl shadow-sm p-8"
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.35, duration: 0.5, type: "spring" }}
@@ -472,8 +471,8 @@ export default function BreachCheckerResult({ ref, ScanResult }) {
                                             />
                                         </motion.div>
                                         <div>
-                                            <h2 className="text-xl font-semibold text-gray-800">{item?.Name}</h2>
-                                            <div className="flex items-center gap-1">
+                                            <h2 className="text-xl font-semibold text-gray-800 text-wrap">{item?.Title}</h2>
+                                            <div className={`flex items-center gap-1 ${item?.Domain ? "block" : "hidden"}`}>
                                                 <a target="_blank" className="text-gray-600/70 text-sm" href={item?.Domain}>
                                                     {item?.Domain}
                                                 </a>
